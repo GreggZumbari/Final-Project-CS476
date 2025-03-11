@@ -1,8 +1,8 @@
 version 3
-run General-0-20250311-00:06:12-16844
+run General-0-20250311-05:03:30-20340
 attr configname General
-attr datetime 20250311-00:06:12
-attr datetimef 20250311-000612
+attr datetime 20250311-05:03:30
+attr datetimef 20250311-050330
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network DDoSNetwork
-attr processid 16844
+attr processid 20340
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -18,7 +18,7 @@ attr runnumber 0
 attr seedset 0
 config image-path ../inet4.5/images
 config network DDoSNetwork
-config sim-time-limit 100s
+config sim-time-limit 1000s
 config **.server.numApps 1
 config **.server.app[0].typename TcpServerApp
 config **.server.app[0].localPort 80
@@ -36,6 +36,12 @@ config **.legitimateClient[*].app[0].tOpen "uniform(2s, 5s)"
 config **.legitimateClient[*].app[0].sendBytes 1000B
 config *.tcp.msl 1s
 config *.tcp.synRetries 2
+config record-eventlog true
+config **.statistic-recording true
+config **.server.dropSignal.vector-recording true
+config **.server.dropSignal.statistic timeavg
+config **.server.droppedPackets.vector-recording true
+config **.server.receivedPackets.vector-recording true
 
 par DDoSNetwork.attacker[0].ethg$o[0].channel typename "\"DDoSNetwork.Channel\""
 par DDoSNetwork.attacker[0].ethg$o[0].channel disabled false
@@ -527,7 +533,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -548,7 +554,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -667,14 +673,10 @@ par DDoSNetwork.server.eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[0].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[0].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[0].mac full-duplex 1
-scalar DDoSNetwork.server.eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -821,7 +823,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[1].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[1].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -842,7 +844,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[1].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[1].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -961,14 +963,10 @@ par DDoSNetwork.server.eth[1].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[1].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[1].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[1].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[1].mac full-duplex 1
-scalar DDoSNetwork.server.eth[1].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[1].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[1].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[1].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[1].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[1].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[1].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[1].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[1].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -1115,7 +1113,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[2].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[2].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -1136,7 +1134,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[2].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[2].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -1255,14 +1253,10 @@ par DDoSNetwork.server.eth[2].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[2].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[2].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[2].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[2].mac full-duplex 1
-scalar DDoSNetwork.server.eth[2].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[2].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[2].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[2].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[2].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[2].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[2].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[2].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[2].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -1409,7 +1403,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[3].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[3].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -1430,7 +1424,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[3].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[3].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -1549,14 +1543,10 @@ par DDoSNetwork.server.eth[3].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[3].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[3].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[3].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[3].mac full-duplex 1
-scalar DDoSNetwork.server.eth[3].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[3].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[3].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[3].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[3].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[3].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[3].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[3].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[3].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -1703,7 +1693,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[4].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[4].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -1724,7 +1714,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[4].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[4].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -1843,14 +1833,10 @@ par DDoSNetwork.server.eth[4].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[4].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[4].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[4].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[4].mac full-duplex 1
-scalar DDoSNetwork.server.eth[4].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[4].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[4].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[4].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[4].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[4].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[4].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[4].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[4].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -1997,7 +1983,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[5].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[5].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -2018,7 +2004,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[5].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[5].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -2137,14 +2123,10 @@ par DDoSNetwork.server.eth[5].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[5].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[5].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[5].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[5].mac full-duplex 1
-scalar DDoSNetwork.server.eth[5].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[5].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[5].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[5].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[5].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[5].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[5].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[5].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[5].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -2291,7 +2273,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[6].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[6].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -2312,7 +2294,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[6].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[6].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -2431,14 +2413,10 @@ par DDoSNetwork.server.eth[6].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[6].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[6].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[6].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[6].mac full-duplex 1
-scalar DDoSNetwork.server.eth[6].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[6].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[6].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[6].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[6].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[6].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[6].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[6].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[6].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -2585,7 +2563,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[7].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[7].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -2606,7 +2584,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[7].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[7].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -2725,14 +2703,10 @@ par DDoSNetwork.server.eth[7].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[7].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[7].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[7].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[7].mac full-duplex 1
-scalar DDoSNetwork.server.eth[7].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[7].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[7].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[7].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[7].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[7].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[7].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[7].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[7].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -2879,7 +2853,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[8].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[8].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -2900,7 +2874,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[8].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[8].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -3019,14 +2993,10 @@ par DDoSNetwork.server.eth[8].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[8].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[8].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[8].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[8].mac full-duplex 1
-scalar DDoSNetwork.server.eth[8].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[8].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[8].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[8].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[8].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[8].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[8].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[8].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[8].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -3173,7 +3143,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[9].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[9].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -3194,7 +3164,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[9].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[9].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -3313,14 +3283,10 @@ par DDoSNetwork.server.eth[9].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[9].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[9].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[9].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[9].mac full-duplex 1
-scalar DDoSNetwork.server.eth[9].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[9].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[9].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[9].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[9].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[9].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[9].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[9].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[9].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -3467,7 +3433,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[10].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[10].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -3488,7 +3454,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[10].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[10].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -3607,14 +3573,10 @@ par DDoSNetwork.server.eth[10].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[10].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[10].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[10].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[10].mac full-duplex 1
-scalar DDoSNetwork.server.eth[10].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[10].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[10].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[10].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[10].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[10].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[10].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[10].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[10].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -3761,7 +3723,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[11].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[11].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -3782,7 +3744,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[11].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[11].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -3901,14 +3863,10 @@ par DDoSNetwork.server.eth[11].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[11].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[11].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[11].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[11].mac full-duplex 1
-scalar DDoSNetwork.server.eth[11].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[11].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[11].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[11].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[11].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[11].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[11].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[11].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[11].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -4055,7 +4013,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.server.eth[12].queue queueLength:timeavg 0
+scalar DDoSNetwork.server.eth[12].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -4076,7 +4034,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.server.eth[12].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.server.eth[12].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -4195,14 +4153,10 @@ par DDoSNetwork.server.eth[12].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.server.eth[12].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.server.eth[12].mac "simulated time" 100
+scalar DDoSNetwork.server.eth[12].mac "simulated time" 0
 scalar DDoSNetwork.server.eth[12].mac full-duplex 1
-scalar DDoSNetwork.server.eth[12].mac "frames/sec sent" 0
-scalar DDoSNetwork.server.eth[12].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.server.eth[12].mac "bits/sec sent" 0
-scalar DDoSNetwork.server.eth[12].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.server.eth[12].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.server.eth[12].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.server.eth[12].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.server.eth[12].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.server.eth[12].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -4743,7 +4697,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.attacker[0].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.attacker[0].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -4764,7 +4718,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.attacker[0].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.attacker[0].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -4883,14 +4837,10 @@ par DDoSNetwork.attacker[0].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.attacker[0].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.attacker[0].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.attacker[0].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.attacker[0].eth[0].mac full-duplex 1
-scalar DDoSNetwork.attacker[0].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.attacker[0].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.attacker[0].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.attacker[0].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.attacker[0].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.attacker[0].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.attacker[0].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.attacker[0].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.attacker[0].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -5431,7 +5381,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.attacker[1].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.attacker[1].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -5452,7 +5402,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.attacker[1].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.attacker[1].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -5571,14 +5521,10 @@ par DDoSNetwork.attacker[1].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.attacker[1].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.attacker[1].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.attacker[1].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.attacker[1].eth[0].mac full-duplex 1
-scalar DDoSNetwork.attacker[1].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.attacker[1].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.attacker[1].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.attacker[1].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.attacker[1].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.attacker[1].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.attacker[1].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.attacker[1].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.attacker[1].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -6119,7 +6065,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.attacker[2].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.attacker[2].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -6140,7 +6086,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.attacker[2].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.attacker[2].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -6259,14 +6205,10 @@ par DDoSNetwork.attacker[2].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.attacker[2].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.attacker[2].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.attacker[2].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.attacker[2].eth[0].mac full-duplex 1
-scalar DDoSNetwork.attacker[2].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.attacker[2].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.attacker[2].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.attacker[2].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.attacker[2].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.attacker[2].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.attacker[2].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.attacker[2].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.attacker[2].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -6807,7 +6749,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.attacker[3].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.attacker[3].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -6828,7 +6770,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.attacker[3].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.attacker[3].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -6947,14 +6889,10 @@ par DDoSNetwork.attacker[3].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.attacker[3].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.attacker[3].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.attacker[3].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.attacker[3].eth[0].mac full-duplex 1
-scalar DDoSNetwork.attacker[3].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.attacker[3].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.attacker[3].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.attacker[3].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.attacker[3].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.attacker[3].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.attacker[3].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.attacker[3].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.attacker[3].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -7495,7 +7433,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.attacker[4].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.attacker[4].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -7516,7 +7454,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.attacker[4].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.attacker[4].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -7635,14 +7573,10 @@ par DDoSNetwork.attacker[4].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.attacker[4].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.attacker[4].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.attacker[4].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.attacker[4].eth[0].mac full-duplex 1
-scalar DDoSNetwork.attacker[4].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.attacker[4].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.attacker[4].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.attacker[4].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.attacker[4].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.attacker[4].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.attacker[4].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.attacker[4].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.attacker[4].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -8183,7 +8117,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.attacker[5].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.attacker[5].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -8204,7 +8138,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.attacker[5].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.attacker[5].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -8323,14 +8257,10 @@ par DDoSNetwork.attacker[5].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.attacker[5].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.attacker[5].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.attacker[5].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.attacker[5].eth[0].mac full-duplex 1
-scalar DDoSNetwork.attacker[5].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.attacker[5].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.attacker[5].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.attacker[5].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.attacker[5].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.attacker[5].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.attacker[5].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.attacker[5].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.attacker[5].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -8871,7 +8801,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.attacker[6].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.attacker[6].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -8892,7 +8822,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.attacker[6].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.attacker[6].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -9011,14 +8941,10 @@ par DDoSNetwork.attacker[6].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.attacker[6].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.attacker[6].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.attacker[6].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.attacker[6].eth[0].mac full-duplex 1
-scalar DDoSNetwork.attacker[6].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.attacker[6].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.attacker[6].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.attacker[6].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.attacker[6].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.attacker[6].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.attacker[6].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.attacker[6].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.attacker[6].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -9559,7 +9485,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.attacker[7].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.attacker[7].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -9580,7 +9506,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.attacker[7].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.attacker[7].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -9699,14 +9625,10 @@ par DDoSNetwork.attacker[7].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.attacker[7].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.attacker[7].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.attacker[7].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.attacker[7].eth[0].mac full-duplex 1
-scalar DDoSNetwork.attacker[7].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.attacker[7].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.attacker[7].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.attacker[7].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.attacker[7].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.attacker[7].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.attacker[7].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.attacker[7].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.attacker[7].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -10247,7 +10169,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.attacker[8].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.attacker[8].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -10268,7 +10190,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.attacker[8].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.attacker[8].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -10387,14 +10309,10 @@ par DDoSNetwork.attacker[8].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.attacker[8].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.attacker[8].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.attacker[8].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.attacker[8].eth[0].mac full-duplex 1
-scalar DDoSNetwork.attacker[8].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.attacker[8].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.attacker[8].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.attacker[8].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.attacker[8].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.attacker[8].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.attacker[8].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.attacker[8].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.attacker[8].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -10935,7 +10853,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.attacker[9].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.attacker[9].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -10956,7 +10874,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.attacker[9].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.attacker[9].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -11075,14 +10993,10 @@ par DDoSNetwork.attacker[9].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.attacker[9].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.attacker[9].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.attacker[9].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.attacker[9].eth[0].mac full-duplex 1
-scalar DDoSNetwork.attacker[9].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.attacker[9].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.attacker[9].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.attacker[9].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.attacker[9].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.attacker[9].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.attacker[9].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.attacker[9].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.attacker[9].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -11623,7 +11537,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.legitimateClient[0].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.legitimateClient[0].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -11644,7 +11558,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.legitimateClient[0].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.legitimateClient[0].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -11763,14 +11677,10 @@ par DDoSNetwork.legitimateClient[0].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.legitimateClient[0].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.legitimateClient[0].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.legitimateClient[0].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.legitimateClient[0].eth[0].mac full-duplex 1
-scalar DDoSNetwork.legitimateClient[0].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.legitimateClient[0].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.legitimateClient[0].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.legitimateClient[0].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.legitimateClient[0].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.legitimateClient[0].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.legitimateClient[0].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.legitimateClient[0].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.legitimateClient[0].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -12311,7 +12221,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.legitimateClient[1].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.legitimateClient[1].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -12332,7 +12242,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.legitimateClient[1].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.legitimateClient[1].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -12451,14 +12361,10 @@ par DDoSNetwork.legitimateClient[1].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.legitimateClient[1].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.legitimateClient[1].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.legitimateClient[1].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.legitimateClient[1].eth[0].mac full-duplex 1
-scalar DDoSNetwork.legitimateClient[1].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.legitimateClient[1].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.legitimateClient[1].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.legitimateClient[1].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.legitimateClient[1].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.legitimateClient[1].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.legitimateClient[1].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.legitimateClient[1].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.legitimateClient[1].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -12999,7 +12905,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar DDoSNetwork.legitimateClient[2].eth[0].queue queueLength:timeavg 0
+scalar DDoSNetwork.legitimateClient[2].eth[0].queue queueLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -13020,7 +12926,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar DDoSNetwork.legitimateClient[2].eth[0].queue queueBitLength:timeavg 0
+scalar DDoSNetwork.legitimateClient[2].eth[0].queue queueBitLength:timeavg nan
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -13139,14 +13045,10 @@ par DDoSNetwork.legitimateClient[2].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par DDoSNetwork.legitimateClient[2].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar DDoSNetwork.legitimateClient[2].eth[0].mac "simulated time" 100
+scalar DDoSNetwork.legitimateClient[2].eth[0].mac "simulated time" 0
 scalar DDoSNetwork.legitimateClient[2].eth[0].mac full-duplex 1
-scalar DDoSNetwork.legitimateClient[2].eth[0].mac "frames/sec sent" 0
-scalar DDoSNetwork.legitimateClient[2].eth[0].mac "frames/sec rcvd" 0
-scalar DDoSNetwork.legitimateClient[2].eth[0].mac "bits/sec sent" 0
-scalar DDoSNetwork.legitimateClient[2].eth[0].mac "bits/sec rcvd" 0
-scalar DDoSNetwork.legitimateClient[2].eth[0].mac "rx channel idle (%)" 100
-scalar DDoSNetwork.legitimateClient[2].eth[0].mac "rx channel utilization (%)" 0
+scalar DDoSNetwork.legitimateClient[2].eth[0].mac "rx channel idle (%)" nan
+scalar DDoSNetwork.legitimateClient[2].eth[0].mac "rx channel utilization (%)" nan
 scalar DDoSNetwork.legitimateClient[2].eth[0].mac txPk:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -13489,7 +13391,6 @@ attr interpolationmode none
 attr recordingmode count
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packets dropped (checksum error), count"
-par DDoSNetwork.legitimateClient[2].tcp.conn-13 typename "\"inet.transportlayer.tcp.TcpConnection\""
 par DDoSNetwork.legitimateClient[2].tcp typename "\"inet.transportlayer.tcp.Tcp\""
 par DDoSNetwork.legitimateClient[2].tcp crcMode "\"declared\""
 attr enum declared,computed

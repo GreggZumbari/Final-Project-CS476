@@ -1,8 +1,8 @@
 version 3
-run General-0-20250311-00:06:12-16844
+run General-0-20250311-05:03:30-20340
 attr configname General
-attr datetime 20250311-00:06:12
-attr datetimef 20250311-000612
+attr datetime 20250311-05:03:30
+attr datetimef 20250311-050330
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network DDoSNetwork
-attr processid 16844
+attr processid 20340
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -18,7 +18,7 @@ attr runnumber 0
 attr seedset 0
 config image-path ../inet4.5/images
 config network DDoSNetwork
-config sim-time-limit 100s
+config sim-time-limit 1000s
 config **.server.numApps 1
 config **.server.app[0].typename TcpServerApp
 config **.server.app[0].localPort 80
@@ -36,6 +36,12 @@ config **.legitimateClient[*].app[0].tOpen "uniform(2s, 5s)"
 config **.legitimateClient[*].app[0].sendBytes 1000B
 config *.tcp.msl 1s
 config *.tcp.synRetries 2
+config record-eventlog true
+config **.statistic-recording true
+config **.server.dropSignal.vector-recording true
+config **.server.dropSignal.statistic timeavg
+config **.server.droppedPackets.vector-recording true
+config **.server.receivedPackets.vector-recording true
 
 vector 0 DDoSNetwork.server.ethernet encapPk:vector(packetBytes) ETV
 attr interpolationmode none
@@ -4614,308 +4620,6 @@ attr recordingmode vector
 vector 880 DDoSNetwork.server.tcp.conn-0 markingProb:vector ETV
 attr interpolationmode sample-hold
 attr recordingmode vector
-7	0	0	0
-7	0	0	0
-7	0	0	0
-7	0	0	0
-7	0	0	0
-8	0	0	0
-8	0	0	0
-8	0	0	0
-8	0	0	0
-8	0	0	0
-29	0	0	0
-29	0	0	0
-29	0	0	0
-29	0	0	0
-29	0	0	0
-30	0	0	0
-30	0	0	0
-30	0	0	0
-30	0	0	0
-30	0	0	0
-51	0	0	0
-51	0	0	0
-51	0	0	0
-51	0	0	0
-51	0	0	0
-52	0	0	0
-52	0	0	0
-52	0	0	0
-52	0	0	0
-52	0	0	0
-73	0	0	0
-73	0	0	0
-73	0	0	0
-73	0	0	0
-73	0	0	0
-74	0	0	0
-74	0	0	0
-74	0	0	0
-74	0	0	0
-74	0	0	0
-95	0	0	0
-95	0	0	0
-95	0	0	0
-95	0	0	0
-95	0	0	0
-96	0	0	0
-96	0	0	0
-96	0	0	0
-96	0	0	0
-96	0	0	0
-117	0	0	0
-117	0	0	0
-117	0	0	0
-117	0	0	0
-117	0	0	0
-118	0	0	0
-118	0	0	0
-118	0	0	0
-118	0	0	0
-118	0	0	0
-139	0	0	0
-139	0	0	0
-139	0	0	0
-139	0	0	0
-139	0	0	0
-140	0	0	0
-140	0	0	0
-140	0	0	0
-140	0	0	0
-140	0	0	0
-161	0	0	0
-161	0	0	0
-161	0	0	0
-161	0	0	0
-161	0	0	0
-162	0	0	0
-162	0	0	0
-162	0	0	0
-162	0	0	0
-162	0	0	0
-183	0	0	0
-183	0	0	0
-183	0	0	0
-183	0	0	0
-183	0	0	0
-184	0	0	0
-184	0	0	0
-184	0	0	0
-184	0	0	0
-184	0	0	0
-205	0	0	0
-205	0	0	0
-205	0	0	0
-205	0	0	0
-205	0	0	0
-206	0	0	0
-206	0	0	0
-206	0	0	0
-206	0	0	0
-206	0	0	0
-227	0	0	0
-227	0	0	0
-227	0	0	0
-227	0	0	0
-227	0	0	0
-228	0	0	0
-228	0	0	0
-228	0	0	0
-228	0	0	0
-228	0	0	0
-249	0	0	0
-249	0	0	0
-249	0	0	0
-249	0	0	0
-249	0	0	0
-250	0	0	0
-250	0	0	0
-250	0	0	0
-250	0	0	0
-250	0	0	0
-271	0	0	0
-271	0	0	0
-271	0	0	0
-271	0	0	0
-271	0	0	0
-272	0	0	0
-272	0	0	0
-272	0	0	0
-272	0	0	0
-272	0	0	0
-303	0	0	0
-304	0	0	0
-305	0	0	0
-313	0	0	0
-313	0	0	0
-313	0	0	0
-313	0	0	0
-313	0	0	0
-314	0	0	0
-314	0	0	0
-314	0	0	0
-314	0	0	0
-314	0	0	0
-345	0	0	0
-346	0	0	0
-347	0	0	0
-355	0	0	0
-355	0	0	0
-355	0	0	0
-355	0	0	0
-355	0	0	0
-356	0	0	0
-356	0	0	0
-356	0	0	0
-356	0	0	0
-356	0	0	0
-387	0	0	0
-388	0	0	0
-389	0	0	0
-397	0	0	0
-397	0	0	0
-397	0	0	0
-397	0	0	0
-397	0	0	0
-398	0	0	0
-398	0	0	0
-398	0	0	0
-398	0	0	0
-398	0	0	0
-429	0	0	0
-430	0	0	0
-431	0	0	0
-439	0	0	0
-439	0	0	0
-439	0	0	0
-439	0	0	0
-439	0	0	0
-440	0	0	0
-440	0	0	0
-440	0	0	0
-440	0	0	0
-440	0	0	0
-471	0	0	0
-472	0	0	0
-473	0	0	0
-481	0	0	0
-481	0	0	0
-481	0	0	0
-481	0	0	0
-481	0	0	0
-482	0	0	0
-482	0	0	0
-482	0	0	0
-482	0	0	0
-482	0	0	0
-513	0	0	0
-514	0	0	0
-515	0	0	0
-523	0	0	0
-523	0	0	0
-523	0	0	0
-523	0	0	0
-523	0	0	0
-524	0	0	0
-524	0	0	0
-524	0	0	0
-524	0	0	0
-524	0	0	0
-555	0	0	0
-556	0	0	0
-557	0	0	0
-565	0	0	0
-565	0	0	0
-565	0	0	0
-565	0	0	0
-565	0	0	0
-566	0	0	0
-566	0	0	0
-566	0	0	0
-566	0	0	0
-566	0	0	0
-597	0	0	0
-598	0	0	0
-599	0	0	0
-607	0	0	0
-607	0	0	0
-607	0	0	0
-607	0	0	0
-607	0	0	0
-608	0	0	0
-608	0	0	0
-608	0	0	0
-608	0	0	0
-608	0	0	0
-639	0	0	0
-640	0	0	0
-641	0	0	0
-649	0	0	0
-649	0	0	0
-649	0	0	0
-649	0	0	0
-649	0	0	0
-650	0	0	0
-650	0	0	0
-650	0	0	0
-650	0	0	0
-650	0	0	0
-681	0	0	0
-682	0	0	0
-683	0	0	0
-691	0	0	0
-691	0	0	0
-691	0	0	0
-691	0	0	0
-691	0	0	0
-692	0	0	0
-692	0	0	0
-692	0	0	0
-692	0	0	0
-692	0	0	0
-723	0	0	0
-724	0	0	0
-725	0	0	0
-733	0	0	0
-733	0	0	0
-733	0	0	0
-733	0	0	0
-733	0	0	0
-734	0	0	0
-734	0	0	0
-734	0	0	0
-734	0	0	0
-734	0	0	0
-765	0	0	0
-766	0	0	0
-767	0	0	0
-775	0	0	0
-775	0	0	0
-775	0	0	0
-775	0	0	0
-775	0	0	0
-776	0	0	0
-776	0	0	0
-776	0	0	0
-776	0	0	0
-776	0	0	0
-807	0	0	0
-808	0	0	0
-809	0	0	0
-817	0	0	0
-817	0	0	0
-817	0	0	0
-817	0	0	0
-817	0	0	0
-818	0	0	0
-818	0	0	0
-818	0	0	0
-818	0	0	0
-818	0	0	0
-849	0	0	0
-850	0	0	0
-851	0	0	0
 vector 881 DDoSNetwork.attacker[0].tcp.conn-1 state:vector ETV
 attr interpolationmode sample-hold
 attr recordingmode vector
@@ -5960,91 +5664,306 @@ attr recordingmode vector
 vector 1228 DDoSNetwork.legitimateClient[1].tcp.conn-12 markingProb:vector ETV
 attr interpolationmode sample-hold
 attr recordingmode vector
-vector 1229 DDoSNetwork.legitimateClient[2].tcp.conn-13 state:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1230 DDoSNetwork.legitimateClient[2].tcp.conn-13 sndWnd:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1231 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvWnd:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1232 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvAdv:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1233 DDoSNetwork.legitimateClient[2].tcp.conn-13 sndNxt:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1234 DDoSNetwork.legitimateClient[2].tcp.conn-13 sndAck:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1235 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvSeq:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1236 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvAck:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1237 DDoSNetwork.legitimateClient[2].tcp.conn-13 unacked:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1238 DDoSNetwork.legitimateClient[2].tcp.conn-13 dupAcks:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1239 DDoSNetwork.legitimateClient[2].tcp.conn-13 pipe:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1240 DDoSNetwork.legitimateClient[2].tcp.conn-13 sndSacks:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1241 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvSacks:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1242 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvOooSeg:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1243 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvNASeg:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1244 DDoSNetwork.legitimateClient[2].tcp.conn-13 sackedBytes:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1245 DDoSNetwork.legitimateClient[2].tcp.conn-13 tcpRcvQueueBytes:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1246 DDoSNetwork.legitimateClient[2].tcp.conn-13 tcpRcvQueueDrops:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1247 DDoSNetwork.legitimateClient[2].tcp.conn-13 tcpRcvPayloadBytes:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1248 DDoSNetwork.legitimateClient[2].tcp.conn-13 cwnd:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1249 DDoSNetwork.legitimateClient[2].tcp.conn-13 ssthresh:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1250 DDoSNetwork.legitimateClient[2].tcp.conn-13 rtt:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1251 DDoSNetwork.legitimateClient[2].tcp.conn-13 srtt:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1252 DDoSNetwork.legitimateClient[2].tcp.conn-13 rttvar:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1253 DDoSNetwork.legitimateClient[2].tcp.conn-13 rto:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1254 DDoSNetwork.legitimateClient[2].tcp.conn-13 numRtos:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1255 DDoSNetwork.legitimateClient[2].tcp.conn-13 load:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1256 DDoSNetwork.legitimateClient[2].tcp.conn-13 calcLoad:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1257 DDoSNetwork.legitimateClient[2].tcp.conn-13 markingProb:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
+7	0	0	0
+7	0	0	0
+7	0	0	0
+7	0	0	0
+7	0	0	0
+8	0	0	0
+8	0	0	0
+8	0	0	0
+8	0	0	0
+8	0	0	0
+29	0	0	0
+29	0	0	0
+29	0	0	0
+29	0	0	0
+29	0	0	0
+30	0	0	0
+30	0	0	0
+30	0	0	0
+30	0	0	0
+30	0	0	0
+51	0	0	0
+51	0	0	0
+51	0	0	0
+51	0	0	0
+51	0	0	0
+52	0	0	0
+52	0	0	0
+52	0	0	0
+52	0	0	0
+52	0	0	0
+73	0	0	0
+73	0	0	0
+73	0	0	0
+73	0	0	0
+73	0	0	0
+74	0	0	0
+74	0	0	0
+74	0	0	0
+74	0	0	0
+74	0	0	0
+95	0	0	0
+95	0	0	0
+95	0	0	0
+95	0	0	0
+95	0	0	0
+96	0	0	0
+96	0	0	0
+96	0	0	0
+96	0	0	0
+96	0	0	0
+117	0	0	0
+117	0	0	0
+117	0	0	0
+117	0	0	0
+117	0	0	0
+118	0	0	0
+118	0	0	0
+118	0	0	0
+118	0	0	0
+118	0	0	0
+139	0	0	0
+139	0	0	0
+139	0	0	0
+139	0	0	0
+139	0	0	0
+140	0	0	0
+140	0	0	0
+140	0	0	0
+140	0	0	0
+140	0	0	0
+161	0	0	0
+161	0	0	0
+161	0	0	0
+161	0	0	0
+161	0	0	0
+162	0	0	0
+162	0	0	0
+162	0	0	0
+162	0	0	0
+162	0	0	0
+183	0	0	0
+183	0	0	0
+183	0	0	0
+183	0	0	0
+183	0	0	0
+184	0	0	0
+184	0	0	0
+184	0	0	0
+184	0	0	0
+184	0	0	0
+205	0	0	0
+205	0	0	0
+205	0	0	0
+205	0	0	0
+205	0	0	0
+206	0	0	0
+206	0	0	0
+206	0	0	0
+206	0	0	0
+206	0	0	0
+227	0	0	0
+227	0	0	0
+227	0	0	0
+227	0	0	0
+227	0	0	0
+228	0	0	0
+228	0	0	0
+228	0	0	0
+228	0	0	0
+228	0	0	0
+249	0	0	0
+249	0	0	0
+249	0	0	0
+249	0	0	0
+249	0	0	0
+250	0	0	0
+250	0	0	0
+250	0	0	0
+250	0	0	0
+250	0	0	0
+271	0	0	0
+271	0	0	0
+271	0	0	0
+271	0	0	0
+271	0	0	0
+272	0	0	0
+272	0	0	0
+272	0	0	0
+272	0	0	0
+272	0	0	0
+303	0	0	0
+304	0	0	0
+305	0	0	0
+313	0	0	0
+313	0	0	0
+313	0	0	0
+313	0	0	0
+313	0	0	0
+314	0	0	0
+314	0	0	0
+314	0	0	0
+314	0	0	0
+314	0	0	0
+345	0	0	0
+346	0	0	0
+347	0	0	0
+355	0	0	0
+355	0	0	0
+355	0	0	0
+355	0	0	0
+355	0	0	0
+356	0	0	0
+356	0	0	0
+356	0	0	0
+356	0	0	0
+356	0	0	0
+387	0	0	0
+388	0	0	0
+389	0	0	0
+397	0	0	0
+397	0	0	0
+397	0	0	0
+397	0	0	0
+397	0	0	0
+398	0	0	0
+398	0	0	0
+398	0	0	0
+398	0	0	0
+398	0	0	0
+429	0	0	0
+430	0	0	0
+431	0	0	0
+439	0	0	0
+439	0	0	0
+439	0	0	0
+439	0	0	0
+439	0	0	0
+440	0	0	0
+440	0	0	0
+440	0	0	0
+440	0	0	0
+440	0	0	0
+471	0	0	0
+472	0	0	0
+473	0	0	0
+481	0	0	0
+481	0	0	0
+481	0	0	0
+481	0	0	0
+481	0	0	0
+482	0	0	0
+482	0	0	0
+482	0	0	0
+482	0	0	0
+482	0	0	0
+513	0	0	0
+514	0	0	0
+515	0	0	0
+523	0	0	0
+523	0	0	0
+523	0	0	0
+523	0	0	0
+523	0	0	0
+524	0	0	0
+524	0	0	0
+524	0	0	0
+524	0	0	0
+524	0	0	0
+555	0	0	0
+556	0	0	0
+557	0	0	0
+565	0	0	0
+565	0	0	0
+565	0	0	0
+565	0	0	0
+565	0	0	0
+566	0	0	0
+566	0	0	0
+566	0	0	0
+566	0	0	0
+566	0	0	0
+597	0	0	0
+598	0	0	0
+599	0	0	0
+607	0	0	0
+607	0	0	0
+607	0	0	0
+607	0	0	0
+607	0	0	0
+608	0	0	0
+608	0	0	0
+608	0	0	0
+608	0	0	0
+608	0	0	0
+639	0	0	0
+640	0	0	0
+641	0	0	0
+649	0	0	0
+649	0	0	0
+649	0	0	0
+649	0	0	0
+649	0	0	0
+650	0	0	0
+650	0	0	0
+650	0	0	0
+650	0	0	0
+650	0	0	0
+681	0	0	0
+682	0	0	0
+683	0	0	0
+691	0	0	0
+691	0	0	0
+691	0	0	0
+691	0	0	0
+691	0	0	0
+692	0	0	0
+692	0	0	0
+692	0	0	0
+692	0	0	0
+692	0	0	0
+723	0	0	0
+724	0	0	0
+725	0	0	0
+733	0	0	0
+733	0	0	0
+733	0	0	0
+733	0	0	0
+733	0	0	0
+734	0	0	0
+734	0	0	0
+734	0	0	0
+734	0	0	0
+734	0	0	0
+765	0	0	0
+766	0	0	0
+767	0	0	0
+775	0	0	0
+775	0	0	0
+775	0	0	0
+775	0	0	0
+775	0	0	0
+776	0	0	0
+776	0	0	0
+776	0	0	0
+776	0	0	0
+776	0	0	0
+807	0	0	0
+808	0	0	0
+809	0	0	0
+817	0	0	0
+817	0	0	0
+817	0	0	0
+817	0	0	0
+817	0	0	0
+818	0	0	0
+818	0	0	0
+818	0	0	0
+818	0	0	0
+818	0	0	0
+849	0	0	0
+850	0	0	0
+851	0	0	0
 

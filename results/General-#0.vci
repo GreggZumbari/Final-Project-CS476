@@ -1,9 +1,9 @@
-file 270825 1741676782                                          
+file 267055 1741694717                                          
 version 3
-run General-0-20250311-00:06:12-16844
+run General-0-20250311-05:03:30-20340
 attr configname General
-attr datetime 20250311-00:06:12
-attr datetimef 20250311-000612
+attr datetime 20250311-05:03:30
+attr datetimef 20250311-050330
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,7 +11,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network DDoSNetwork
-attr processid 16844
+attr processid 20340
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -19,7 +19,7 @@ attr runnumber 0
 attr seedset 0
 config image-path ../inet4.5/images
 config network DDoSNetwork
-config sim-time-limit 100s
+config sim-time-limit 1000s
 config **.server.numApps 1
 config **.server.app[0].typename TcpServerApp
 config **.server.app[0].localPort 80
@@ -37,6 +37,12 @@ config **.legitimateClient[*].app[0].tOpen "uniform(2s, 5s)"
 config **.legitimateClient[*].app[0].sendBytes 1000B
 config *.tcp.msl 1s
 config *.tcp.synRetries 2
+config record-eventlog true
+config **.statistic-recording true
+config **.server.dropSignal.vector-recording true
+config **.server.dropSignal.statistic timeavg
+config **.server.droppedPackets.vector-recording true
+config **.server.receivedPackets.vector-recording true
 
 vector 0 DDoSNetwork.server.ethernet encapPk:vector(packetBytes) ETV
 attr interpolationmode none
@@ -4615,100 +4621,6 @@ attr recordingmode vector
 vector 880 DDoSNetwork.server.tcp.conn-0 markingProb:vector ETV
 attr interpolationmode sample-hold
 attr recordingmode vector
-7	217676 45 0 0 0 0 5 0 0 0 0
-8	217721 45 0 0 0 0 5 0 0 0 0
-29	217766 50 0 0 0 0 5 0 0 0 0
-30	217816 50 0 0 0 0 5 0 0 0 0
-51	217866 50 0 0 0 0 5 0 0 0 0
-52	217916 50 0 0 0 0 5 0 0 0 0
-73	217966 50 0 0 0 0 5 0 0 0 0
-74	218016 50 0 0 0 0 5 0 0 0 0
-95	218066 50 0 0 0 0 5 0 0 0 0
-96	218116 50 0 0 0 0 5 0 0 0 0
-117	218166 55 0 0 0 0 5 0 0 0 0
-118	218221 55 0 0 0 0 5 0 0 0 0
-139	218276 55 0 0 0 0 5 0 0 0 0
-140	218331 55 0 0 0 0 5 0 0 0 0
-161	218386 55 0 0 0 0 5 0 0 0 0
-162	218441 55 0 0 0 0 5 0 0 0 0
-183	218496 55 0 0 0 0 5 0 0 0 0
-184	218551 55 0 0 0 0 5 0 0 0 0
-205	218606 55 0 0 0 0 5 0 0 0 0
-206	218661 55 0 0 0 0 5 0 0 0 0
-227	218716 55 0 0 0 0 5 0 0 0 0
-228	218771 55 0 0 0 0 5 0 0 0 0
-249	218826 55 0 0 0 0 5 0 0 0 0
-250	218881 55 0 0 0 0 5 0 0 0 0
-271	218936 55 0 0 0 0 5 0 0 0 0
-272	218991 55 0 0 0 0 5 0 0 0 0
-303	219046 11 0 0 0 0 1 0 0 0 0
-304	219057 11 0 0 0 0 1 0 0 0 0
-305	219068 11 0 0 0 0 1 0 0 0 0
-313	219079 55 0 0 0 0 5 0 0 0 0
-314	219134 55 0 0 0 0 5 0 0 0 0
-345	219189 11 0 0 0 0 1 0 0 0 0
-346	219200 11 0 0 0 0 1 0 0 0 0
-347	219211 11 0 0 0 0 1 0 0 0 0
-355	219222 55 0 0 0 0 5 0 0 0 0
-356	219277 55 0 0 0 0 5 0 0 0 0
-387	219332 11 0 0 0 0 1 0 0 0 0
-388	219343 11 0 0 0 0 1 0 0 0 0
-389	219354 11 0 0 0 0 1 0 0 0 0
-397	219365 55 0 0 0 0 5 0 0 0 0
-398	219420 55 0 0 0 0 5 0 0 0 0
-429	219475 11 0 0 0 0 1 0 0 0 0
-430	219486 11 0 0 0 0 1 0 0 0 0
-431	219497 11 0 0 0 0 1 0 0 0 0
-439	219508 55 0 0 0 0 5 0 0 0 0
-440	219563 55 0 0 0 0 5 0 0 0 0
-471	219618 11 0 0 0 0 1 0 0 0 0
-472	219629 11 0 0 0 0 1 0 0 0 0
-473	219640 11 0 0 0 0 1 0 0 0 0
-481	219651 55 0 0 0 0 5 0 0 0 0
-482	219706 55 0 0 0 0 5 0 0 0 0
-513	219761 11 0 0 0 0 1 0 0 0 0
-514	219772 11 0 0 0 0 1 0 0 0 0
-515	219783 11 0 0 0 0 1 0 0 0 0
-523	219794 55 0 0 0 0 5 0 0 0 0
-524	219849 55 0 0 0 0 5 0 0 0 0
-555	219904 11 0 0 0 0 1 0 0 0 0
-556	219915 11 0 0 0 0 1 0 0 0 0
-557	219926 11 0 0 0 0 1 0 0 0 0
-565	219937 55 0 0 0 0 5 0 0 0 0
-566	219992 55 0 0 0 0 5 0 0 0 0
-597	220047 11 0 0 0 0 1 0 0 0 0
-598	220058 11 0 0 0 0 1 0 0 0 0
-599	220069 11 0 0 0 0 1 0 0 0 0
-607	220080 55 0 0 0 0 5 0 0 0 0
-608	220135 55 0 0 0 0 5 0 0 0 0
-639	220190 11 0 0 0 0 1 0 0 0 0
-640	220201 11 0 0 0 0 1 0 0 0 0
-641	220212 11 0 0 0 0 1 0 0 0 0
-649	220223 55 0 0 0 0 5 0 0 0 0
-650	220278 55 0 0 0 0 5 0 0 0 0
-681	220333 11 0 0 0 0 1 0 0 0 0
-682	220344 11 0 0 0 0 1 0 0 0 0
-683	220355 11 0 0 0 0 1 0 0 0 0
-691	220366 55 0 0 0 0 5 0 0 0 0
-692	220421 55 0 0 0 0 5 0 0 0 0
-723	220476 11 0 0 0 0 1 0 0 0 0
-724	220487 11 0 0 0 0 1 0 0 0 0
-725	220498 11 0 0 0 0 1 0 0 0 0
-733	220509 55 0 0 0 0 5 0 0 0 0
-734	220564 55 0 0 0 0 5 0 0 0 0
-765	220619 11 0 0 0 0 1 0 0 0 0
-766	220630 11 0 0 0 0 1 0 0 0 0
-767	220641 11 0 0 0 0 1 0 0 0 0
-775	220652 55 0 0 0 0 5 0 0 0 0
-776	220707 55 0 0 0 0 5 0 0 0 0
-807	220762 11 0 0 0 0 1 0 0 0 0
-808	220773 11 0 0 0 0 1 0 0 0 0
-809	220784 11 0 0 0 0 1 0 0 0 0
-817	220795 55 0 0 0 0 5 0 0 0 0
-818	220850 55 0 0 0 0 5 0 0 0 0
-849	220905 11 0 0 0 0 1 0 0 0 0
-850	220916 11 0 0 0 0 1 0 0 0 0
-851	220927 11 0 0 0 0 1 0 0 0 0
 vector 881 DDoSNetwork.attacker[0].tcp.conn-1 state:vector ETV
 attr interpolationmode sample-hold
 attr recordingmode vector
@@ -5753,91 +5665,98 @@ attr recordingmode vector
 vector 1228 DDoSNetwork.legitimateClient[1].tcp.conn-12 markingProb:vector ETV
 attr interpolationmode sample-hold
 attr recordingmode vector
-vector 1229 DDoSNetwork.legitimateClient[2].tcp.conn-13 state:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1230 DDoSNetwork.legitimateClient[2].tcp.conn-13 sndWnd:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1231 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvWnd:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1232 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvAdv:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1233 DDoSNetwork.legitimateClient[2].tcp.conn-13 sndNxt:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1234 DDoSNetwork.legitimateClient[2].tcp.conn-13 sndAck:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1235 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvSeq:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1236 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvAck:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1237 DDoSNetwork.legitimateClient[2].tcp.conn-13 unacked:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1238 DDoSNetwork.legitimateClient[2].tcp.conn-13 dupAcks:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1239 DDoSNetwork.legitimateClient[2].tcp.conn-13 pipe:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1240 DDoSNetwork.legitimateClient[2].tcp.conn-13 sndSacks:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1241 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvSacks:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1242 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvOooSeg:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1243 DDoSNetwork.legitimateClient[2].tcp.conn-13 rcvNASeg:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1244 DDoSNetwork.legitimateClient[2].tcp.conn-13 sackedBytes:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1245 DDoSNetwork.legitimateClient[2].tcp.conn-13 tcpRcvQueueBytes:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1246 DDoSNetwork.legitimateClient[2].tcp.conn-13 tcpRcvQueueDrops:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1247 DDoSNetwork.legitimateClient[2].tcp.conn-13 tcpRcvPayloadBytes:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1248 DDoSNetwork.legitimateClient[2].tcp.conn-13 cwnd:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1249 DDoSNetwork.legitimateClient[2].tcp.conn-13 ssthresh:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1250 DDoSNetwork.legitimateClient[2].tcp.conn-13 rtt:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1251 DDoSNetwork.legitimateClient[2].tcp.conn-13 srtt:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1252 DDoSNetwork.legitimateClient[2].tcp.conn-13 rttvar:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1253 DDoSNetwork.legitimateClient[2].tcp.conn-13 rto:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1254 DDoSNetwork.legitimateClient[2].tcp.conn-13 numRtos:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1255 DDoSNetwork.legitimateClient[2].tcp.conn-13 load:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1256 DDoSNetwork.legitimateClient[2].tcp.conn-13 calcLoad:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
-vector 1257 DDoSNetwork.legitimateClient[2].tcp.conn-13 markingProb:vector ETV
-attr interpolationmode sample-hold
-attr recordingmode vector
+7	263791 45 0 0 0 0 5 0 0 0 0
+8	263836 45 0 0 0 0 5 0 0 0 0
+29	263881 50 0 0 0 0 5 0 0 0 0
+30	263931 50 0 0 0 0 5 0 0 0 0
+51	263981 50 0 0 0 0 5 0 0 0 0
+52	264031 50 0 0 0 0 5 0 0 0 0
+73	264081 50 0 0 0 0 5 0 0 0 0
+74	264131 50 0 0 0 0 5 0 0 0 0
+95	264181 50 0 0 0 0 5 0 0 0 0
+96	264231 50 0 0 0 0 5 0 0 0 0
+117	264281 55 0 0 0 0 5 0 0 0 0
+118	264336 55 0 0 0 0 5 0 0 0 0
+139	264391 55 0 0 0 0 5 0 0 0 0
+140	264446 55 0 0 0 0 5 0 0 0 0
+161	264501 55 0 0 0 0 5 0 0 0 0
+162	264556 55 0 0 0 0 5 0 0 0 0
+183	264611 55 0 0 0 0 5 0 0 0 0
+184	264666 55 0 0 0 0 5 0 0 0 0
+205	264721 55 0 0 0 0 5 0 0 0 0
+206	264776 55 0 0 0 0 5 0 0 0 0
+227	264831 55 0 0 0 0 5 0 0 0 0
+228	264886 55 0 0 0 0 5 0 0 0 0
+249	264941 55 0 0 0 0 5 0 0 0 0
+250	264996 55 0 0 0 0 5 0 0 0 0
+271	265051 55 0 0 0 0 5 0 0 0 0
+272	265106 55 0 0 0 0 5 0 0 0 0
+303	265161 11 0 0 0 0 1 0 0 0 0
+304	265172 11 0 0 0 0 1 0 0 0 0
+305	265183 11 0 0 0 0 1 0 0 0 0
+313	265194 55 0 0 0 0 5 0 0 0 0
+314	265249 55 0 0 0 0 5 0 0 0 0
+345	265304 11 0 0 0 0 1 0 0 0 0
+346	265315 11 0 0 0 0 1 0 0 0 0
+347	265326 11 0 0 0 0 1 0 0 0 0
+355	265337 55 0 0 0 0 5 0 0 0 0
+356	265392 55 0 0 0 0 5 0 0 0 0
+387	265447 11 0 0 0 0 1 0 0 0 0
+388	265458 11 0 0 0 0 1 0 0 0 0
+389	265469 11 0 0 0 0 1 0 0 0 0
+397	265480 55 0 0 0 0 5 0 0 0 0
+398	265535 55 0 0 0 0 5 0 0 0 0
+429	265590 11 0 0 0 0 1 0 0 0 0
+430	265601 11 0 0 0 0 1 0 0 0 0
+431	265612 11 0 0 0 0 1 0 0 0 0
+439	265623 55 0 0 0 0 5 0 0 0 0
+440	265678 55 0 0 0 0 5 0 0 0 0
+471	265733 11 0 0 0 0 1 0 0 0 0
+472	265744 11 0 0 0 0 1 0 0 0 0
+473	265755 11 0 0 0 0 1 0 0 0 0
+481	265766 55 0 0 0 0 5 0 0 0 0
+482	265821 55 0 0 0 0 5 0 0 0 0
+513	265876 11 0 0 0 0 1 0 0 0 0
+514	265887 11 0 0 0 0 1 0 0 0 0
+515	265898 11 0 0 0 0 1 0 0 0 0
+523	265909 55 0 0 0 0 5 0 0 0 0
+524	265964 55 0 0 0 0 5 0 0 0 0
+555	266019 11 0 0 0 0 1 0 0 0 0
+556	266030 11 0 0 0 0 1 0 0 0 0
+557	266041 11 0 0 0 0 1 0 0 0 0
+565	266052 55 0 0 0 0 5 0 0 0 0
+566	266107 55 0 0 0 0 5 0 0 0 0
+597	266162 11 0 0 0 0 1 0 0 0 0
+598	266173 11 0 0 0 0 1 0 0 0 0
+599	266184 11 0 0 0 0 1 0 0 0 0
+607	266195 55 0 0 0 0 5 0 0 0 0
+608	266250 55 0 0 0 0 5 0 0 0 0
+639	266305 11 0 0 0 0 1 0 0 0 0
+640	266316 11 0 0 0 0 1 0 0 0 0
+641	266327 11 0 0 0 0 1 0 0 0 0
+649	266338 55 0 0 0 0 5 0 0 0 0
+650	266393 55 0 0 0 0 5 0 0 0 0
+681	266448 11 0 0 0 0 1 0 0 0 0
+682	266459 11 0 0 0 0 1 0 0 0 0
+683	266470 11 0 0 0 0 1 0 0 0 0
+691	266481 55 0 0 0 0 5 0 0 0 0
+692	266536 55 0 0 0 0 5 0 0 0 0
+723	266591 11 0 0 0 0 1 0 0 0 0
+724	266602 11 0 0 0 0 1 0 0 0 0
+725	266613 11 0 0 0 0 1 0 0 0 0
+733	266624 55 0 0 0 0 5 0 0 0 0
+734	266679 55 0 0 0 0 5 0 0 0 0
+765	266734 11 0 0 0 0 1 0 0 0 0
+766	266745 11 0 0 0 0 1 0 0 0 0
+767	266756 11 0 0 0 0 1 0 0 0 0
+775	266767 55 0 0 0 0 5 0 0 0 0
+776	266822 55 0 0 0 0 5 0 0 0 0
+807	266877 11 0 0 0 0 1 0 0 0 0
+808	266888 11 0 0 0 0 1 0 0 0 0
+809	266899 11 0 0 0 0 1 0 0 0 0
+817	266910 55 0 0 0 0 5 0 0 0 0
+818	266965 55 0 0 0 0 5 0 0 0 0
+849	267020 11 0 0 0 0 1 0 0 0 0
+850	267031 11 0 0 0 0 1 0 0 0 0
+851	267042 11 0 0 0 0 1 0 0 0 0
 
