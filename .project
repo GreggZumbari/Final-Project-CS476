@@ -3,6 +3,8 @@
 	<name>final</name>
 	<comment></comment>
 	<projects>
+		<project>inet4.5</project>
+		<project>routing</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
