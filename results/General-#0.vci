@@ -1,9 +1,9 @@
-                                                                
+file 399126 1741963432                                          
 version 3
-run General-0-20250314-03:06:23-18580
+run General-0-20250314-07:41:47-23268
 attr configname General
-attr datetime 20250314-03:06:23
-attr datetimef 20250314-030623
+attr datetime 20250314-07:41:47
+attr datetimef 20250314-074147
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,7 +11,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network DDoSNetwork
-attr processid 18580
+attr processid 23268
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -7087,4 +7087,1793 @@ attr recordingmode vector
 attr source throughput(packetPushed)
 attr title "data rate"
 attr unit bps
-vecto
+vector 1275 DDoSNetwork.legitimateClient[1].app[0].sink meanBitLifeTimePerPacket:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPushed)))
+attr title "mean bit life time per packet"
+attr unit s
+vector 1276 DDoSNetwork.legitimateClient[1].app[0].sink packetJitter:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source jitter(weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPushed))))
+attr title "packet jitter"
+attr unit s
+vector 1277 DDoSNetwork.legitimateClient[1].app[0].sink packetDelayDifferenceToMean:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source differenceToMean(weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPushed))))
+attr title "packet delay difference to mean"
+attr unit s
+vector 1278 DDoSNetwork.legitimateClient[1].app[0].sink packetDelayVariation:vector ETV
+attr recordingmode vector
+attr source stddev(weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPushed))))
+attr title "packet delay variation"
+attr unit s
+vector 1279 DDoSNetwork.server.tcp.conn-0 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1280 DDoSNetwork.server.tcp.conn-0 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1281 DDoSNetwork.server.tcp.conn-0 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1282 DDoSNetwork.server.tcp.conn-0 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1283 DDoSNetwork.server.tcp.conn-0 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1284 DDoSNetwork.server.tcp.conn-0 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1285 DDoSNetwork.server.tcp.conn-0 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1286 DDoSNetwork.server.tcp.conn-0 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1287 DDoSNetwork.server.tcp.conn-0 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1288 DDoSNetwork.server.tcp.conn-0 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1289 DDoSNetwork.server.tcp.conn-0 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1290 DDoSNetwork.server.tcp.conn-0 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1291 DDoSNetwork.server.tcp.conn-0 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1292 DDoSNetwork.server.tcp.conn-0 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1293 DDoSNetwork.server.tcp.conn-0 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1294 DDoSNetwork.server.tcp.conn-0 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1295 DDoSNetwork.server.tcp.conn-0 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1296 DDoSNetwork.server.tcp.conn-0 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1297 DDoSNetwork.server.tcp.conn-0 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1298 DDoSNetwork.server.tcp.conn-0 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1299 DDoSNetwork.server.tcp.conn-0 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1300 DDoSNetwork.server.tcp.conn-0 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1301 DDoSNetwork.server.tcp.conn-0 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1302 DDoSNetwork.server.tcp.conn-0 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1303 DDoSNetwork.server.tcp.conn-0 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1304 DDoSNetwork.server.tcp.conn-0 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1305 DDoSNetwork.server.tcp.conn-0 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1306 DDoSNetwork.server.tcp.conn-0 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1307 DDoSNetwork.server.tcp.conn-0 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1308 DDoSNetwork.attacker[0].tcp.conn-1 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1309 DDoSNetwork.attacker[0].tcp.conn-1 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1310 DDoSNetwork.attacker[0].tcp.conn-1 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1311 DDoSNetwork.attacker[0].tcp.conn-1 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1312 DDoSNetwork.attacker[0].tcp.conn-1 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1313 DDoSNetwork.attacker[0].tcp.conn-1 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1314 DDoSNetwork.attacker[0].tcp.conn-1 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1315 DDoSNetwork.attacker[0].tcp.conn-1 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1316 DDoSNetwork.attacker[0].tcp.conn-1 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1317 DDoSNetwork.attacker[0].tcp.conn-1 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1318 DDoSNetwork.attacker[0].tcp.conn-1 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1319 DDoSNetwork.attacker[0].tcp.conn-1 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1320 DDoSNetwork.attacker[0].tcp.conn-1 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1321 DDoSNetwork.attacker[0].tcp.conn-1 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1322 DDoSNetwork.attacker[0].tcp.conn-1 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1323 DDoSNetwork.attacker[0].tcp.conn-1 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1324 DDoSNetwork.attacker[0].tcp.conn-1 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1325 DDoSNetwork.attacker[0].tcp.conn-1 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1326 DDoSNetwork.attacker[0].tcp.conn-1 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1327 DDoSNetwork.attacker[0].tcp.conn-1 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1328 DDoSNetwork.attacker[0].tcp.conn-1 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1329 DDoSNetwork.attacker[0].tcp.conn-1 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1330 DDoSNetwork.attacker[0].tcp.conn-1 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1331 DDoSNetwork.attacker[0].tcp.conn-1 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1332 DDoSNetwork.attacker[0].tcp.conn-1 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1333 DDoSNetwork.attacker[0].tcp.conn-1 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1334 DDoSNetwork.attacker[0].tcp.conn-1 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1335 DDoSNetwork.attacker[0].tcp.conn-1 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1336 DDoSNetwork.attacker[0].tcp.conn-1 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1337 DDoSNetwork.attacker[1].tcp.conn-2 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1338 DDoSNetwork.attacker[1].tcp.conn-2 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1339 DDoSNetwork.attacker[1].tcp.conn-2 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1340 DDoSNetwork.attacker[1].tcp.conn-2 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1341 DDoSNetwork.attacker[1].tcp.conn-2 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1342 DDoSNetwork.attacker[1].tcp.conn-2 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1343 DDoSNetwork.attacker[1].tcp.conn-2 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1344 DDoSNetwork.attacker[1].tcp.conn-2 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1345 DDoSNetwork.attacker[1].tcp.conn-2 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1346 DDoSNetwork.attacker[1].tcp.conn-2 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1347 DDoSNetwork.attacker[1].tcp.conn-2 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1348 DDoSNetwork.attacker[1].tcp.conn-2 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1349 DDoSNetwork.attacker[1].tcp.conn-2 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1350 DDoSNetwork.attacker[1].tcp.conn-2 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1351 DDoSNetwork.attacker[1].tcp.conn-2 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1352 DDoSNetwork.attacker[1].tcp.conn-2 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1353 DDoSNetwork.attacker[1].tcp.conn-2 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1354 DDoSNetwork.attacker[1].tcp.conn-2 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1355 DDoSNetwork.attacker[1].tcp.conn-2 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1356 DDoSNetwork.attacker[1].tcp.conn-2 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1357 DDoSNetwork.attacker[1].tcp.conn-2 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1358 DDoSNetwork.attacker[1].tcp.conn-2 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1359 DDoSNetwork.attacker[1].tcp.conn-2 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1360 DDoSNetwork.attacker[1].tcp.conn-2 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1361 DDoSNetwork.attacker[1].tcp.conn-2 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1362 DDoSNetwork.attacker[1].tcp.conn-2 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1363 DDoSNetwork.attacker[1].tcp.conn-2 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1364 DDoSNetwork.attacker[1].tcp.conn-2 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1365 DDoSNetwork.attacker[1].tcp.conn-2 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1366 DDoSNetwork.attacker[2].tcp.conn-3 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1367 DDoSNetwork.attacker[2].tcp.conn-3 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1368 DDoSNetwork.attacker[2].tcp.conn-3 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1369 DDoSNetwork.attacker[2].tcp.conn-3 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1370 DDoSNetwork.attacker[2].tcp.conn-3 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1371 DDoSNetwork.attacker[2].tcp.conn-3 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1372 DDoSNetwork.attacker[2].tcp.conn-3 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1373 DDoSNetwork.attacker[2].tcp.conn-3 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1374 DDoSNetwork.attacker[2].tcp.conn-3 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1375 DDoSNetwork.attacker[2].tcp.conn-3 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1376 DDoSNetwork.attacker[2].tcp.conn-3 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1377 DDoSNetwork.attacker[2].tcp.conn-3 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1378 DDoSNetwork.attacker[2].tcp.conn-3 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1379 DDoSNetwork.attacker[2].tcp.conn-3 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1380 DDoSNetwork.attacker[2].tcp.conn-3 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1381 DDoSNetwork.attacker[2].tcp.conn-3 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1382 DDoSNetwork.attacker[2].tcp.conn-3 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1383 DDoSNetwork.attacker[2].tcp.conn-3 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1384 DDoSNetwork.attacker[2].tcp.conn-3 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1385 DDoSNetwork.attacker[2].tcp.conn-3 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1386 DDoSNetwork.attacker[2].tcp.conn-3 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1387 DDoSNetwork.attacker[2].tcp.conn-3 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1388 DDoSNetwork.attacker[2].tcp.conn-3 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1389 DDoSNetwork.attacker[2].tcp.conn-3 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1390 DDoSNetwork.attacker[2].tcp.conn-3 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1391 DDoSNetwork.attacker[2].tcp.conn-3 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1392 DDoSNetwork.attacker[2].tcp.conn-3 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1393 DDoSNetwork.attacker[2].tcp.conn-3 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1394 DDoSNetwork.attacker[2].tcp.conn-3 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1395 DDoSNetwork.attacker[3].tcp.conn-4 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1396 DDoSNetwork.attacker[3].tcp.conn-4 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1397 DDoSNetwork.attacker[3].tcp.conn-4 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1398 DDoSNetwork.attacker[3].tcp.conn-4 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1399 DDoSNetwork.attacker[3].tcp.conn-4 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1400 DDoSNetwork.attacker[3].tcp.conn-4 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1401 DDoSNetwork.attacker[3].tcp.conn-4 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1402 DDoSNetwork.attacker[3].tcp.conn-4 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1403 DDoSNetwork.attacker[3].tcp.conn-4 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1404 DDoSNetwork.attacker[3].tcp.conn-4 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1405 DDoSNetwork.attacker[3].tcp.conn-4 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1406 DDoSNetwork.attacker[3].tcp.conn-4 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1407 DDoSNetwork.attacker[3].tcp.conn-4 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1408 DDoSNetwork.attacker[3].tcp.conn-4 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1409 DDoSNetwork.attacker[3].tcp.conn-4 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1410 DDoSNetwork.attacker[3].tcp.conn-4 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1411 DDoSNetwork.attacker[3].tcp.conn-4 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1412 DDoSNetwork.attacker[3].tcp.conn-4 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1413 DDoSNetwork.attacker[3].tcp.conn-4 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1414 DDoSNetwork.attacker[3].tcp.conn-4 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1415 DDoSNetwork.attacker[3].tcp.conn-4 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1416 DDoSNetwork.attacker[3].tcp.conn-4 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1417 DDoSNetwork.attacker[3].tcp.conn-4 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1418 DDoSNetwork.attacker[3].tcp.conn-4 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1419 DDoSNetwork.attacker[3].tcp.conn-4 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1420 DDoSNetwork.attacker[3].tcp.conn-4 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1421 DDoSNetwork.attacker[3].tcp.conn-4 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1422 DDoSNetwork.attacker[3].tcp.conn-4 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1423 DDoSNetwork.attacker[3].tcp.conn-4 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+20	346436 50 0 0 0 0 5 0 0 0 0
+21	346486 50 0 0 0 0 5 0 0 0 0
+31	346536 50 0 0 0 0 5 0 0 0 0
+32	346586 50 0 0 0 0 5 0 0 0 0
+66	346636 50 0 0 0 0 5 0 0 0 0
+67	346686 50 0 0 0 0 5 0 0 0 0
+77	346736 50 0 0 0 0 5 0 0 0 0
+78	346786 50 0 0 0 0 5 0 0 0 0
+112	346836 55 0 0 0 0 5 0 0 0 0
+113	346891 55 0 0 0 0 5 0 0 0 0
+123	346946 55 0 0 0 0 5 0 0 0 0
+124	347001 55 0 0 0 0 5 0 0 0 0
+158	347056 55 0 0 0 0 5 0 0 0 0
+159	347111 55 0 0 0 0 5 0 0 0 0
+169	347166 55 0 0 0 0 5 0 0 0 0
+170	347221 55 0 0 0 0 5 0 0 0 0
+204	347276 55 0 0 0 0 5 0 0 0 0
+205	347331 55 0 0 0 0 5 0 0 0 0
+215	347386 55 0 0 0 0 5 0 0 0 0
+216	347441 55 0 0 0 0 5 0 0 0 0
+250	347496 55 0 0 0 0 5 0 0 0 0
+251	347551 55 0 0 0 0 5 0 0 0 0
+261	347606 55 0 0 0 0 5 0 0 0 0
+262	347661 55 0 0 0 0 5 0 0 0 0
+296	347716 55 0 0 0 0 5 0 0 0 0
+297	347771 55 0 0 0 0 5 0 0 0 0
+307	347826 55 0 0 0 0 5 0 0 0 0
+308	347881 55 0 0 0 0 5 0 0 0 0
+342	347936 55 0 0 0 0 5 0 0 0 0
+343	347991 55 0 0 0 0 5 0 0 0 0
+353	348046 55 0 0 0 0 5 0 0 0 0
+354	348101 55 0 0 0 0 5 0 0 0 0
+388	348156 55 0 0 0 0 5 0 0 0 0
+389	348211 55 0 0 0 0 5 0 0 0 0
+399	348266 55 0 0 0 0 5 0 0 0 0
+400	348321 55 0 0 0 0 5 0 0 0 0
+434	348376 55 0 0 0 0 5 0 0 0 0
+435	348431 55 0 0 0 0 5 0 0 0 0
+445	348486 55 0 0 0 0 5 0 0 0 0
+446	348541 55 0 0 0 0 5 0 0 0 0
+480	348596 55 0 0 0 0 5 0 0 0 0
+481	348651 55 0 0 0 0 5 0 0 0 0
+491	348706 55 0 0 0 0 5 0 0 0 0
+492	348761 55 0 0 0 0 5 0 0 0 0
+526	348816 55 0 0 0 0 5 0 0 0 0
+527	348871 55 0 0 0 0 5 0 0 0 0
+537	348926 55 0 0 0 0 5 0 0 0 0
+538	348981 55 0 0 0 0 5 0 0 0 0
+572	349036 55 0 0 0 0 5 0 0 0 0
+573	349091 55 0 0 0 0 5 0 0 0 0
+583	349146 55 0 0 0 0 5 0 0 0 0
+584	349201 55 0 0 0 0 5 0 0 0 0
+620	349256 55 0 0 0 0 5 0 0 0 0
+621	349311 55 0 0 0 0 5 0 0 0 0
+652	349366 11 0 0 0 0 1 0 0 0 0
+653	349377 11 0 0 0 0 1 0 0 0 0
+654	349388 11 0 0 0 0 1 0 0 0 0
+662	349399 55 0 0 0 0 5 0 0 0 0
+663	349454 55 0 0 0 0 5 0 0 0 0
+694	349509 11 0 0 0 0 1 0 0 0 0
+695	349520 11 0 0 0 0 1 0 0 0 0
+696	349531 11 0 0 0 0 1 0 0 0 0
+697	349542 11 0 0 0 0 1 8 8 8 64
+714	349553 55 0 0 0 0 5 0 0 0 0
+715	349608 55 0 0 0 0 5 0 0 0 0
+746	349663 11 0 0 0 0 1 0 0 0 0
+747	349674 11 0 0 0 0 1 0 0 0 0
+748	349685 11 0 0 0 0 1 0 0 0 0
+749	349696 11 0 0 0 0 1 8 8 8 64
+766	349707 55 0 0 0 0 5 0 0 0 0
+767	349762 55 0 0 0 0 5 0 0 0 0
+798	349817 11 0 0 0 0 1 0 0 0 0
+799	349828 11 0 0 0 0 1 0 0 0 0
+800	349839 11 0 0 0 0 1 0 0 0 0
+801	349850 11 0 0 0 0 1 8 8 8 64
+818	349861 55 0 0 0 0 5 0 0 0 0
+819	349916 55 0 0 0 0 5 0 0 0 0
+850	349971 11 0 0 0 0 1 0 0 0 0
+851	349982 11 0 0 0 0 1 0 0 0 0
+852	349993 11 0 0 0 0 1 0 0 0 0
+853	350004 11 0 0 0 0 1 8 8 8 64
+870	350015 55 0 0 0 0 5 0 0 0 0
+871	350070 55 0 0 0 0 5 0 0 0 0
+902	350125 11 0 0 0 0 1 0 0 0 0
+903	350136 11 0 0 0 0 1 0 0 0 0
+904	350147 11 0 0 0 0 1 0 0 0 0
+905	350158 11 0 0 0 0 1 8 8 8 64
+922	350169 55 0 0 0 0 5 0 0 0 0
+923	350224 55 0 0 0 0 5 0 0 0 0
+954	350279 11 0 0 0 0 1 0 0 0 0
+955	350290 11 0 0 0 0 1 0 0 0 0
+956	350301 11 0 0 0 0 1 0 0 0 0
+957	350312 11 0 0 0 0 1 8 8 8 64
+974	350323 55 0 0 0 0 5 0 0 0 0
+975	350378 55 0 0 0 0 5 0 0 0 0
+1006	350433 12 0 0 0 0 1 0 0 0 0
+1007	350445 12 0 0 0 0 1 0 0 0 0
+1008	350457 12 0 0 0 0 1 0 0 0 0
+1009	350469 12 0 0 0 0 1 8 8 8 64
+1026	350481 60 0 0 0 0 5 0 0 0 0
+1027	350541 60 0 0 0 0 5 0 0 0 0
+1058	350601 12 0 0 0 0 1 0 0 0 0
+1059	350613 12 0 0 0 0 1 0 0 0 0
+1060	350625 12 0 0 0 0 1 0 0 0 0
+1061	350637 12 0 0 0 0 1 8 8 8 64
+1078	350649 60 0 0 0 0 5 0 0 0 0
+1079	350709 60 0 0 0 0 5 0 0 0 0
+1110	350769 12 0 0 0 0 1 0 0 0 0
+1111	350781 12 0 0 0 0 1 0 0 0 0
+1112	350793 12 0 0 0 0 1 0 0 0 0
+1113	350805 12 0 0 0 0 1 8 8 8 64
+1130	350817 60 0 0 0 0 5 0 0 0 0
+1131	350877 60 0 0 0 0 5 0 0 0 0
+1162	350937 12 0 0 0 0 1 0 0 0 0
+1163	350949 12 0 0 0 0 1 0 0 0 0
+1164	350961 12 0 0 0 0 1 0 0 0 0
+1165	350973 12 0 0 0 0 1 8 8 8 64
+1182	350985 60 0 0 0 0 5 0 0 0 0
+1183	351045 60 0 0 0 0 5 0 0 0 0
+1214	351105 12 0 0 0 0 1 0 0 0 0
+1215	351117 12 0 0 0 0 1 0 0 0 0
+1216	351129 12 0 0 0 0 1 0 0 0 0
+1217	351141 15 0 0 0 0 1 8000 8000 8000 64000000
+1234	351156 60 0 0 0 0 5 0 0 0 0
+1235	351216 60 0 0 0 0 5 0 0 0 0
+1266	351276 12 0 0 0 0 1 0 0 0 0
+1267	351288 12 0 0 0 0 1 0 0 0 0
+1268	351300 12 0 0 0 0 1 0 0 0 0
+1269	351312 15 0 0 0 0 1 8000 8000 8000 64000000
+1310	351327 16 14 14 0 0 1 7504 7504 7504 56310016
+1311	351343 16 14 14 0 0 1 7504 7504 7504 56310016
+1313	351359 13 14 14 0 0 1 0 0 0 0
+1324	351372 13 14 14 0 0 1 0 0 0 0
+1339	351385 16 16 16 0 0 1 7504 7504 7504 56310016
+1340	351401 16 16 16 0 0 1 7504 7504 7504 56310016
+1342	351417 13 16 16 0 0 1 0 0 0 0
+1353	351430 13 16 16 0 0 1 0 0 0 0
+1368	351443 16 18 18 0 0 1 7504 7504 7504 56310016
+1369	351459 16 18 18 0 0 1 7504 7504 7504 56310016
+1371	351475 13 18 18 0 0 1 0 0 0 0
+1382	351488 13 18 18 0 0 1 0 0 0 0
+1397	351501 16 20 20 0 0 1 7504 7504 7504 56310016
+1398	351517 16 20 20 0 0 1 7504 7504 7504 56310016
+1400	351533 13 20 20 0 0 1 0 0 0 0
+1411	351546 13 20 20 0 0 1 0 0 0 0
+vector 1424 DDoSNetwork.attacker[4].tcp.conn-5 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1425 DDoSNetwork.attacker[4].tcp.conn-5 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1426 DDoSNetwork.attacker[4].tcp.conn-5 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1427 DDoSNetwork.attacker[4].tcp.conn-5 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1428 DDoSNetwork.attacker[4].tcp.conn-5 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1429 DDoSNetwork.attacker[4].tcp.conn-5 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1430 DDoSNetwork.attacker[4].tcp.conn-5 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1431 DDoSNetwork.attacker[4].tcp.conn-5 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1432 DDoSNetwork.attacker[4].tcp.conn-5 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1433 DDoSNetwork.attacker[4].tcp.conn-5 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1434 DDoSNetwork.attacker[4].tcp.conn-5 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1435 DDoSNetwork.attacker[4].tcp.conn-5 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1436 DDoSNetwork.attacker[4].tcp.conn-5 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1437 DDoSNetwork.attacker[4].tcp.conn-5 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1438 DDoSNetwork.attacker[4].tcp.conn-5 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1439 DDoSNetwork.attacker[4].tcp.conn-5 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1440 DDoSNetwork.attacker[4].tcp.conn-5 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1441 DDoSNetwork.attacker[4].tcp.conn-5 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1442 DDoSNetwork.attacker[4].tcp.conn-5 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1443 DDoSNetwork.attacker[4].tcp.conn-5 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1444 DDoSNetwork.attacker[4].tcp.conn-5 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1445 DDoSNetwork.attacker[4].tcp.conn-5 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1446 DDoSNetwork.attacker[4].tcp.conn-5 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1447 DDoSNetwork.attacker[4].tcp.conn-5 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1448 DDoSNetwork.attacker[4].tcp.conn-5 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1449 DDoSNetwork.attacker[4].tcp.conn-5 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1450 DDoSNetwork.attacker[4].tcp.conn-5 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1451 DDoSNetwork.attacker[4].tcp.conn-5 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1452 DDoSNetwork.attacker[4].tcp.conn-5 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1453 DDoSNetwork.attacker[5].tcp.conn-6 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1454 DDoSNetwork.attacker[5].tcp.conn-6 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1455 DDoSNetwork.attacker[5].tcp.conn-6 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1456 DDoSNetwork.attacker[5].tcp.conn-6 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1457 DDoSNetwork.attacker[5].tcp.conn-6 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1458 DDoSNetwork.attacker[5].tcp.conn-6 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1459 DDoSNetwork.attacker[5].tcp.conn-6 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1460 DDoSNetwork.attacker[5].tcp.conn-6 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1461 DDoSNetwork.attacker[5].tcp.conn-6 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1462 DDoSNetwork.attacker[5].tcp.conn-6 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1463 DDoSNetwork.attacker[5].tcp.conn-6 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1464 DDoSNetwork.attacker[5].tcp.conn-6 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1465 DDoSNetwork.attacker[5].tcp.conn-6 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1466 DDoSNetwork.attacker[5].tcp.conn-6 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1467 DDoSNetwork.attacker[5].tcp.conn-6 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1468 DDoSNetwork.attacker[5].tcp.conn-6 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1469 DDoSNetwork.attacker[5].tcp.conn-6 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1470 DDoSNetwork.attacker[5].tcp.conn-6 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1471 DDoSNetwork.attacker[5].tcp.conn-6 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1472 DDoSNetwork.attacker[5].tcp.conn-6 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1473 DDoSNetwork.attacker[5].tcp.conn-6 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1474 DDoSNetwork.attacker[5].tcp.conn-6 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1475 DDoSNetwork.attacker[5].tcp.conn-6 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1476 DDoSNetwork.attacker[5].tcp.conn-6 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1477 DDoSNetwork.attacker[5].tcp.conn-6 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1478 DDoSNetwork.attacker[5].tcp.conn-6 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1479 DDoSNetwork.attacker[5].tcp.conn-6 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1480 DDoSNetwork.attacker[5].tcp.conn-6 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1481 DDoSNetwork.attacker[5].tcp.conn-6 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1482 DDoSNetwork.attacker[6].tcp.conn-7 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1483 DDoSNetwork.attacker[6].tcp.conn-7 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1484 DDoSNetwork.attacker[6].tcp.conn-7 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1485 DDoSNetwork.attacker[6].tcp.conn-7 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1486 DDoSNetwork.attacker[6].tcp.conn-7 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1487 DDoSNetwork.attacker[6].tcp.conn-7 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1488 DDoSNetwork.attacker[6].tcp.conn-7 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1489 DDoSNetwork.attacker[6].tcp.conn-7 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1490 DDoSNetwork.attacker[6].tcp.conn-7 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1491 DDoSNetwork.attacker[6].tcp.conn-7 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1492 DDoSNetwork.attacker[6].tcp.conn-7 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1493 DDoSNetwork.attacker[6].tcp.conn-7 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1494 DDoSNetwork.attacker[6].tcp.conn-7 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1495 DDoSNetwork.attacker[6].tcp.conn-7 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1496 DDoSNetwork.attacker[6].tcp.conn-7 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1497 DDoSNetwork.attacker[6].tcp.conn-7 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1498 DDoSNetwork.attacker[6].tcp.conn-7 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1499 DDoSNetwork.attacker[6].tcp.conn-7 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1500 DDoSNetwork.attacker[6].tcp.conn-7 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1501 DDoSNetwork.attacker[6].tcp.conn-7 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1502 DDoSNetwork.attacker[6].tcp.conn-7 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1503 DDoSNetwork.attacker[6].tcp.conn-7 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1504 DDoSNetwork.attacker[6].tcp.conn-7 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1505 DDoSNetwork.attacker[6].tcp.conn-7 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1506 DDoSNetwork.attacker[6].tcp.conn-7 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1507 DDoSNetwork.attacker[6].tcp.conn-7 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1508 DDoSNetwork.attacker[6].tcp.conn-7 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1509 DDoSNetwork.attacker[6].tcp.conn-7 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1510 DDoSNetwork.attacker[6].tcp.conn-7 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1511 DDoSNetwork.attacker[7].tcp.conn-8 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1512 DDoSNetwork.attacker[7].tcp.conn-8 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1513 DDoSNetwork.attacker[7].tcp.conn-8 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1514 DDoSNetwork.attacker[7].tcp.conn-8 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1515 DDoSNetwork.attacker[7].tcp.conn-8 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1516 DDoSNetwork.attacker[7].tcp.conn-8 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1517 DDoSNetwork.attacker[7].tcp.conn-8 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1518 DDoSNetwork.attacker[7].tcp.conn-8 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1519 DDoSNetwork.attacker[7].tcp.conn-8 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1520 DDoSNetwork.attacker[7].tcp.conn-8 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1521 DDoSNetwork.attacker[7].tcp.conn-8 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1522 DDoSNetwork.attacker[7].tcp.conn-8 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1523 DDoSNetwork.attacker[7].tcp.conn-8 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1524 DDoSNetwork.attacker[7].tcp.conn-8 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1525 DDoSNetwork.attacker[7].tcp.conn-8 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1526 DDoSNetwork.attacker[7].tcp.conn-8 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1527 DDoSNetwork.attacker[7].tcp.conn-8 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1528 DDoSNetwork.attacker[7].tcp.conn-8 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1529 DDoSNetwork.attacker[7].tcp.conn-8 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1530 DDoSNetwork.attacker[7].tcp.conn-8 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1531 DDoSNetwork.attacker[7].tcp.conn-8 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1532 DDoSNetwork.attacker[7].tcp.conn-8 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1533 DDoSNetwork.attacker[7].tcp.conn-8 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1534 DDoSNetwork.attacker[7].tcp.conn-8 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1535 DDoSNetwork.attacker[7].tcp.conn-8 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1536 DDoSNetwork.attacker[7].tcp.conn-8 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1537 DDoSNetwork.attacker[7].tcp.conn-8 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1538 DDoSNetwork.attacker[7].tcp.conn-8 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1539 DDoSNetwork.attacker[7].tcp.conn-8 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1540 DDoSNetwork.attacker[8].tcp.conn-9 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1541 DDoSNetwork.attacker[8].tcp.conn-9 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1542 DDoSNetwork.attacker[8].tcp.conn-9 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1543 DDoSNetwork.attacker[8].tcp.conn-9 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1544 DDoSNetwork.attacker[8].tcp.conn-9 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1545 DDoSNetwork.attacker[8].tcp.conn-9 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1546 DDoSNetwork.attacker[8].tcp.conn-9 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1547 DDoSNetwork.attacker[8].tcp.conn-9 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1548 DDoSNetwork.attacker[8].tcp.conn-9 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1549 DDoSNetwork.attacker[8].tcp.conn-9 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1550 DDoSNetwork.attacker[8].tcp.conn-9 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1551 DDoSNetwork.attacker[8].tcp.conn-9 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1552 DDoSNetwork.attacker[8].tcp.conn-9 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1553 DDoSNetwork.attacker[8].tcp.conn-9 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1554 DDoSNetwork.attacker[8].tcp.conn-9 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1555 DDoSNetwork.attacker[8].tcp.conn-9 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1556 DDoSNetwork.attacker[8].tcp.conn-9 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1557 DDoSNetwork.attacker[8].tcp.conn-9 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1558 DDoSNetwork.attacker[8].tcp.conn-9 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1559 DDoSNetwork.attacker[8].tcp.conn-9 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1560 DDoSNetwork.attacker[8].tcp.conn-9 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1561 DDoSNetwork.attacker[8].tcp.conn-9 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1562 DDoSNetwork.attacker[8].tcp.conn-9 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1563 DDoSNetwork.attacker[8].tcp.conn-9 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1564 DDoSNetwork.attacker[8].tcp.conn-9 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1565 DDoSNetwork.attacker[8].tcp.conn-9 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1566 DDoSNetwork.attacker[8].tcp.conn-9 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1567 DDoSNetwork.attacker[8].tcp.conn-9 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1568 DDoSNetwork.attacker[8].tcp.conn-9 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1569 DDoSNetwork.attacker[9].tcp.conn-10 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1570 DDoSNetwork.attacker[9].tcp.conn-10 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1571 DDoSNetwork.attacker[9].tcp.conn-10 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1572 DDoSNetwork.attacker[9].tcp.conn-10 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1573 DDoSNetwork.attacker[9].tcp.conn-10 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1574 DDoSNetwork.attacker[9].tcp.conn-10 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1575 DDoSNetwork.attacker[9].tcp.conn-10 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1576 DDoSNetwork.attacker[9].tcp.conn-10 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1577 DDoSNetwork.attacker[9].tcp.conn-10 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1578 DDoSNetwork.attacker[9].tcp.conn-10 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1579 DDoSNetwork.attacker[9].tcp.conn-10 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1580 DDoSNetwork.attacker[9].tcp.conn-10 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1581 DDoSNetwork.attacker[9].tcp.conn-10 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1582 DDoSNetwork.attacker[9].tcp.conn-10 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1583 DDoSNetwork.attacker[9].tcp.conn-10 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1584 DDoSNetwork.attacker[9].tcp.conn-10 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1585 DDoSNetwork.attacker[9].tcp.conn-10 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1586 DDoSNetwork.attacker[9].tcp.conn-10 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1587 DDoSNetwork.attacker[9].tcp.conn-10 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1588 DDoSNetwork.attacker[9].tcp.conn-10 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1589 DDoSNetwork.attacker[9].tcp.conn-10 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1590 DDoSNetwork.attacker[9].tcp.conn-10 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1591 DDoSNetwork.attacker[9].tcp.conn-10 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1592 DDoSNetwork.attacker[9].tcp.conn-10 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1593 DDoSNetwork.attacker[9].tcp.conn-10 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1594 DDoSNetwork.attacker[9].tcp.conn-10 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1595 DDoSNetwork.attacker[9].tcp.conn-10 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1596 DDoSNetwork.attacker[9].tcp.conn-10 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1597 DDoSNetwork.attacker[9].tcp.conn-10 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1598 DDoSNetwork.legitimateClient[0].tcp.conn-11 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1599 DDoSNetwork.legitimateClient[0].tcp.conn-11 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1600 DDoSNetwork.legitimateClient[0].tcp.conn-11 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1601 DDoSNetwork.legitimateClient[0].tcp.conn-11 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1602 DDoSNetwork.legitimateClient[0].tcp.conn-11 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1603 DDoSNetwork.legitimateClient[0].tcp.conn-11 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1604 DDoSNetwork.legitimateClient[0].tcp.conn-11 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1605 DDoSNetwork.legitimateClient[0].tcp.conn-11 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1606 DDoSNetwork.legitimateClient[0].tcp.conn-11 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1607 DDoSNetwork.legitimateClient[0].tcp.conn-11 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1608 DDoSNetwork.legitimateClient[0].tcp.conn-11 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1609 DDoSNetwork.legitimateClient[0].tcp.conn-11 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1610 DDoSNetwork.legitimateClient[0].tcp.conn-11 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1611 DDoSNetwork.legitimateClient[0].tcp.conn-11 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1612 DDoSNetwork.legitimateClient[0].tcp.conn-11 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1613 DDoSNetwork.legitimateClient[0].tcp.conn-11 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1614 DDoSNetwork.legitimateClient[0].tcp.conn-11 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1615 DDoSNetwork.legitimateClient[0].tcp.conn-11 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1616 DDoSNetwork.legitimateClient[0].tcp.conn-11 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1617 DDoSNetwork.legitimateClient[0].tcp.conn-11 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1618 DDoSNetwork.legitimateClient[0].tcp.conn-11 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1619 DDoSNetwork.legitimateClient[0].tcp.conn-11 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1620 DDoSNetwork.legitimateClient[0].tcp.conn-11 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1621 DDoSNetwork.legitimateClient[0].tcp.conn-11 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1622 DDoSNetwork.legitimateClient[0].tcp.conn-11 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1623 DDoSNetwork.legitimateClient[0].tcp.conn-11 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1624 DDoSNetwork.legitimateClient[0].tcp.conn-11 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1625 DDoSNetwork.legitimateClient[0].tcp.conn-11 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1626 DDoSNetwork.legitimateClient[0].tcp.conn-11 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1627 DDoSNetwork.legitimateClient[1].tcp.conn-12 state:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1628 DDoSNetwork.legitimateClient[1].tcp.conn-12 sndWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1629 DDoSNetwork.legitimateClient[1].tcp.conn-12 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1630 DDoSNetwork.legitimateClient[1].tcp.conn-12 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1631 DDoSNetwork.legitimateClient[1].tcp.conn-12 sndNxt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1632 DDoSNetwork.legitimateClient[1].tcp.conn-12 sndAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1633 DDoSNetwork.legitimateClient[1].tcp.conn-12 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1634 DDoSNetwork.legitimateClient[1].tcp.conn-12 rcvAck:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1635 DDoSNetwork.legitimateClient[1].tcp.conn-12 unacked:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1636 DDoSNetwork.legitimateClient[1].tcp.conn-12 dupAcks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1637 DDoSNetwork.legitimateClient[1].tcp.conn-12 pipe:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1638 DDoSNetwork.legitimateClient[1].tcp.conn-12 sndSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1639 DDoSNetwork.legitimateClient[1].tcp.conn-12 rcvSacks:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1640 DDoSNetwork.legitimateClient[1].tcp.conn-12 rcvOooSeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1641 DDoSNetwork.legitimateClient[1].tcp.conn-12 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1642 DDoSNetwork.legitimateClient[1].tcp.conn-12 sackedBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1643 DDoSNetwork.legitimateClient[1].tcp.conn-12 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1644 DDoSNetwork.legitimateClient[1].tcp.conn-12 tcpRcvQueueDrops:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1645 DDoSNetwork.legitimateClient[1].tcp.conn-12 tcpRcvPayloadBytes:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1646 DDoSNetwork.legitimateClient[1].tcp.conn-12 cwnd:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1647 DDoSNetwork.legitimateClient[1].tcp.conn-12 ssthresh:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1648 DDoSNetwork.legitimateClient[1].tcp.conn-12 rtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1649 DDoSNetwork.legitimateClient[1].tcp.conn-12 srtt:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1650 DDoSNetwork.legitimateClient[1].tcp.conn-12 rttvar:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1651 DDoSNetwork.legitimateClient[1].tcp.conn-12 rto:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1652 DDoSNetwork.legitimateClient[1].tcp.conn-12 numRtos:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1653 DDoSNetwork.legitimateClient[1].tcp.conn-12 load:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1654 DDoSNetwork.legitimateClient[1].tcp.conn-12 calcLoad:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+vector 1655 DDoSNetwork.legitimateClient[1].tcp.conn-12 markingProb:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+1	382382 145 98 104 0.00000581 0.00000581 7 46 46 322 14812
+89	382527 21 86 86 0.00000581 0.00000581 1 64 64 64 4096
+90	382548 21 86 86 0.00000581 0.00000581 1 64 64 64 4096
+135	382569 22 87 87 0.00000581 0.00000581 1 64 64 64 4096
+136	382591 22 87 87 0.00000581 0.00000581 1 64 64 64 4096
+181	382613 22 88 88 0.00000581 0.00000581 1 64 64 64 4096
+182	382635 22 88 88 0.00000581 0.00000581 1 64 64 64 4096
+227	382657 22 89 89 0.00000581 0.00000581 1 64 64 64 4096
+228	382679 22 89 89 0.00000581 0.00000581 1 64 64 64 4096
+273	382701 22 90 90 0.00000581 0.00000581 1 64 64 64 4096
+274	382723 22 90 90 0.00000581 0.00000581 1 64 64 64 4096
+319	382745 22 91 91 0.00000581 0.00000581 1 64 64 64 4096
+320	382767 22 91 91 0.00000581 0.00000581 1 64 64 64 4096
+365	382789 22 92 92 0.00000581 0.00000581 1 64 64 64 4096
+366	382811 22 92 92 0.00000581 0.00000581 1 64 64 64 4096
+411	382833 22 93 93 0.00000581 0.00000581 1 64 64 64 4096
+412	382855 22 93 93 0.00000581 0.00000581 1 64 64 64 4096
+457	382877 22 94 94 0.00000581 0.00000581 1 64 64 64 4096
+458	382899 22 94 94 0.00000581 0.00000581 1 64 64 64 4096
+503	382921 22 95 95 0.00000581 0.00000581 1 64 64 64 4096
+504	382943 22 95 95 0.00000581 0.00000581 1 64 64 64 4096
+549	382965 22 96 96 0.00000581 0.00000581 1 64 64 64 4096
+550	382987 22 96 96 0.00000581 0.00000581 1 64 64 64 4096
+595	383009 22 97 97 0.00000581 0.00000581 1 64 64 64 4096
+596	383031 22 97 97 0.00000581 0.00000581 1 64 64 64 4096
+655	383053 13 50 50 0 0 1 28 28 28 784
+662	383066 12 62 62 0 0 1 0 0 0 0
+663	383078 12 62 62 0 0 1 0 0 0 0
+664	383090 12 62 62 0 0 1 0 0 0 0
+665	383102 14 62 62 0 0 1 368 368 368 135424
+667	383116 14 62 62 0 0 1 368 368 368 135424
+673	383130 22 74 74 0.00000576 0.00000576 1 64 64 64 4096
+678	383152 13 62 62 0 0 1 46 46 46 2116
+690	383165 13 38 38 0 0 1 28 28 28 784
+707	383178 13 51 51 0 0 1 28 28 28 784
+714	383191 12 63 63 0 0 1 0 0 0 0
+715	383203 12 63 63 0 0 1 0 0 0 0
+716	383215 12 63 63 0 0 1 0 0 0 0
+717	383227 14 63 63 0 0 1 368 368 368 135424
+719	383241 14 63 63 0 0 1 368 368 368 135424
+725	383255 22 75 75 0.00000576 0.00000576 1 64 64 64 4096
+730	383277 13 63 63 0 0 1 46 46 46 2116
+742	383290 13 39 39 0 0 1 28 28 28 784
+759	383303 13 52 52 0 0 1 28 28 28 784
+766	383316 12 64 64 0 0 1 0 0 0 0
+767	383328 12 64 64 0 0 1 0 0 0 0
+768	383340 12 64 64 0 0 1 0 0 0 0
+769	383352 14 64 64 0 0 1 368 368 368 135424
+771	383366 14 64 64 0 0 1 368 368 368 135424
+777	383380 22 76 76 0.00000576 0.00000576 1 64 64 64 4096
+782	383402 13 64 64 0 0 1 46 46 46 2116
+794	383415 13 40 40 0 0 1 28 28 28 784
+811	383428 13 53 53 0 0 1 28 28 28 784
+818	383441 12 65 65 0 0 1 0 0 0 0
+819	383453 12 65 65 0 0 1 0 0 0 0
+820	383465 12 65 65 0 0 1 0 0 0 0
+821	383477 14 65 65 0 0 1 368 368 368 135424
+823	383491 14 65 65 0 0 1 368 368 368 135424
+829	383505 22 77 77 0.00000576 0.00000576 1 64 64 64 4096
+834	383527 13 65 65 0 0 1 46 46 46 2116
+846	383540 13 41 41 0 0 1 28 28 28 784
+863	383553 13 54 54 0 0 1 28 28 28 784
+870	383566 12 66 66 0 0 1 0 0 0 0
+871	383578 12 66 66 0 0 1 0 0 0 0
+872	383590 12 66 66 0 0 1 0 0 0 0
+873	383602 14 66 66 0 0 1 368 368 368 135424
+875	383616 14 66 66 0 0 1 368 368 368 135424
+881	383630 22 78 78 0.00000576 0.00000576 1 64 64 64 4096
+886	383652 13 66 66 0 0 1 46 46 46 2116
+898	383665 13 42 42 0 0 1 28 28 28 784
+915	383678 13 55 55 0 0 1 28 28 28 784
+922	383691 12 67 67 0 0 1 0 0 0 0
+923	383703 12 67 67 0 0 1 0 0 0 0
+924	383715 12 67 67 0 0 1 0 0 0 0
+925	383727 14 67 67 0 0 1 368 368 368 135424
+927	383741 14 67 67 0 0 1 368 368 368 135424
+933	383755 22 79 79 0.00000576 0.00000576 1 64 64 64 4096
+938	383777 13 67 67 0 0 1 46 46 46 2116
+950	383790 13 43 43 0 0 1 28 28 28 784
+967	383803 13 56 56 0 0 1 28 28 28 784
+974	383816 12 68 68 0 0 1 0 0 0 0
+975	383828 12 68 68 0 0 1 0 0 0 0
+976	383840 12 68 68 0 0 1 0 0 0 0
+977	383852 14 68 68 0 0 1 368 368 368 135424
+979	383866 14 68 68 0 0 1 368 368 368 135424
+985	383880 22 80 80 0.00000576 0.00000576 1 64 64 64 4096
+990	383902 13 68 68 0 0 1 46 46 46 2116
+1002	383915 14 44 44 0 0 1 28 28 28 784
+1019	383929 14 57 57 0 0 1 28 28 28 784
+1026	383943 13 69 69 0 0 1 0 0 0 0
+1027	383956 13 69 69 0 0 1 0 0 0 0
+1028	383969 13 69 69 0 0 1 0 0 0 0
+1029	383982 15 69 69 0 0 1 368 368 368 135424
+1031	383997 15 69 69 0 0 1 368 368 368 135424
+1037	384012 23 81 81 0.00000576 0.00000576 1 64 64 64 4096
+1042	384035 14 69 69 0 0 1 46 46 46 2116
+1054	384049 14 45 45 0 0 1 28 28 28 784
+1071	384063 14 58 58 0 0 1 28 28 28 784
+1078	384077 13 70 70 0 0 1 0 0 0 0
+1079	384090 13 70 70 0 0 1 0 0 0 0
+1080	384103 13 70 70 0 0 1 0 0 0 0
+1081	384116 15 70 70 0 0 1 368 368 368 135424
+1083	384131 15 70 70 0 0 1 368 368 368 135424
+1089	384146 23 82 82 0.00000576 0.00000576 1 64 64 64 4096
+1094	384169 14 70 70 0 0 1 46 46 46 2116
+1106	384183 14 46 46 0 0 1 28 28 28 784
+1123	384197 14 59 59 0 0 1 28 28 28 784
+1130	384211 13 71 71 0 0 1 0 0 0 0
+1131	384224 13 71 71 0 0 1 0 0 0 0
+1132	384237 13 71 71 0 0 1 0 0 0 0
+1133	384250 15 71 71 0 0 1 368 368 368 135424
+1135	384265 15 71 71 0 0 1 368 368 368 135424
+1141	384280 23 83 83 0.00000576 0.00000576 1 64 64 64 4096
+1146	384303 14 71 71 0 0 1 46 46 46 2116
+1158	384317 14 47 47 0 0 1 28 28 28 784
+1175	384331 14 60 60 0 0 1 28 28 28 784
+1182	384345 13 72 72 0 0 1 0 0 0 0
+1183	384358 13 72 72 0 0 1 0 0 0 0
+1184	384371 13 72 72 0 0 1 0 0 0 0
+1185	384384 15 72 72 0 0 1 368 368 368 135424
+1187	384399 15 72 72 0 0 1 368 368 368 135424
+1193	384414 23 84 84 0.00000576 0.00000576 1 64 64 64 4096
+1198	384437 14 72 72 0 0 1 46 46 46 2116
+1210	384451 14 48 48 0 0 1 28 28 28 784
+1227	384465 14 61 61 0 0 1 28 28 28 784
+1234	384479 13 73 73 0 0 1 0 0 0 0
+1235	384492 13 73 73 0 0 1 0 0 0 0
+1236	384505 13 73 73 0 0 1 0 0 0 0
+1237	384518 15 73 73 0 0 1 368 368 368 135424
+1239	384533 15 73 73 0 0 1 368 368 368 135424
+1245	384548 23 85 85 0.00000576 0.00000576 1 64 64 64 4096
+1250	384571 14 73 73 0 0 1 46 46 46 2116
+1262	384585 14 49 49 0 0 1 28 28 28 784
+1426	384599 16 22 22 0 0 1 7504 7504 7504 56310016
+1427	384615 16 22 22 0 0 1 7504 7504 7504 56310016
+1429	384631 13 22 22 0 0 1 0 0 0 0
+1440	384644 13 22 22 0 0 1 0 0 0 0
+1455	384657 16 24 24 0 0 1 7504 7504 7504 56310016
+1456	384673 16 24 24 0 0 1 7504 7504 7504 56310016
+1458	384689 13 24 24 0 0 1 0 0 0 0
+1469	384702 13 24 24 0 0 1 0 0 0 0
+1484	384715 16 26 26 0 0 1 7504 7504 7504 56310016
+1485	384731 16 26 26 0 0 1 7504 7504 7504 56310016
+1487	384747 13 26 26 0 0 1 0 0 0 0
+1498	384760 13 26 26 0 0 1 0 0 0 0
+1513	384773 16 28 28 0 0 1 7504 7504 7504 56310016
+1514	384789 16 28 28 0 0 1 7504 7504 7504 56310016
+1516	384805 13 28 28 0 0 1 0 0 0 0
+1527	384818 13 28 28 0 0 1 0 0 0 0
+1542	384831 16 30 30 0 0 1 7504 7504 7504 56310016
+1543	384847 16 30 30 0 0 1 7504 7504 7504 56310016
+1545	384863 13 30 30 0 0 1 0 0 0 0
+1556	384876 13 30 30 0 0 1 0 0 0 0
+1571	384889 16 32 32 0 0 1 7504 7504 7504 56310016
+1572	384905 16 32 32 0 0 1 7504 7504 7504 56310016
+1574	384921 13 32 32 0 0 1 0 0 0 0
+1585	384934 13 32 32 0 0 1 0 0 0 0
+1600	384947 16 34 34 0 0 1 7504 7504 7504 56310016
+1601	384963 16 34 34 0 0 1 7504 7504 7504 56310016
+1603	384979 13 34 34 0 0 1 0 0 0 0
+1614	384992 13 34 34 0 0 1 0 0 0 0
+1629	385005 16 36 36 0 0 1 7504 7504 7504 56310016
+1630	385021 16 36 36 0 0 1 7504 7504 7504 56310016
+1632	385037 13 36 36 0 0 1 0 0 0 0
+1643	385050 13 36 36 0 0 1 0 0 0 0
+0	385063 504 122 313 0.00000581 0.00001743 24 28 56 1008 47040
+1	385567 357 105 277 0.00000581 0.00001743 17 46 46 782 35972
+53	385924 46 134 314 0.00000581 0.00001743 2 368 592 960 485888
+55	385970 46 134 314 0.00000581 0.00001743 2 368 592 960 485888
+66	386016 42 134 314 0.00000581 0.00001743 2 0 0 0 0
+67	386058 42 134 314 0.00000581 0.00001743 2 0 0 0 0
+68	386100 42 134 314 0.00000581 0.00001743 2 0 0 0 0
+69	386142 46 134 314 0.00000581 0.00001743 2 368 592 960 485888
+71	386188 46 134 314 0.00000581 0.00001743 2 368 592 960 485888
+77	386234 44 134 314 0.00000581 0.00001743 2 -2 -1 -3 5
+78	386278 48 134 314 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+79	386326 42 134 314 0.00000581 0.00001743 2 0 0 0 0
+82	386368 46 134 314 0.00000581 0.00001743 2 368 592 960 485888
+88	386414 44 158 338 0.00001157 0.00002399 2 64 74 138 9572
+89	386458 22 254 254 0.00001743 0.00001743 1 64 64 64 4096
+90	386480 22 254 254 0.00001743 0.00001743 1 64 64 64 4096
+93	386502 44 134 314 0.00000581 0.00001743 2 46 74 120 7592
+99	386546 46 135 315 0.00000581 0.00001743 2 368 592 960 485888
+101	386592 48 135 315 0.00000581 0.00001743 2 368 592 960 485888
+112	386640 44 135 315 0.00000581 0.00001743 2 0 0 0 0
+113	386684 44 135 315 0.00000581 0.00001743 2 0 0 0 0
+114	386728 44 135 315 0.00000581 0.00001743 2 0 0 0 0
+115	386772 48 135 315 0.00000581 0.00001743 2 368 592 960 485888
+117	386820 48 135 315 0.00000581 0.00001743 2 368 592 960 485888
+123	386868 46 135 315 0.00000581 0.00001743 2 -2 -1 -3 5
+124	386914 50 135 315 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+125	386964 44 135 315 0.00000581 0.00001743 2 0 0 0 0
+128	387008 48 135 315 0.00000581 0.00001743 2 368 592 960 485888
+134	387056 46 159 339 0.00001157 0.00002399 2 64 74 138 9572
+135	387102 23 255 255 0.00001743 0.00001743 1 64 64 64 4096
+136	387125 23 255 255 0.00001743 0.00001743 1 64 64 64 4096
+139	387148 46 135 315 0.00000581 0.00001743 2 46 74 120 7592
+145	387194 48 136 316 0.00000581 0.00001743 2 368 592 960 485888
+147	387242 48 136 316 0.00000581 0.00001743 2 368 592 960 485888
+158	387290 44 136 316 0.00000581 0.00001743 2 0 0 0 0
+159	387334 44 136 316 0.00000581 0.00001743 2 0 0 0 0
+160	387378 44 136 316 0.00000581 0.00001743 2 0 0 0 0
+161	387422 48 136 316 0.00000581 0.00001743 2 368 592 960 485888
+163	387470 48 136 316 0.00000581 0.00001743 2 368 592 960 485888
+169	387518 46 136 316 0.00000581 0.00001743 2 -2 -1 -3 5
+170	387564 50 136 316 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+171	387614 44 136 316 0.00000581 0.00001743 2 0 0 0 0
+174	387658 48 136 316 0.00000581 0.00001743 2 368 592 960 485888
+180	387706 46 160 340 0.00001157 0.00002399 2 64 74 138 9572
+181	387752 23 256 256 0.00001743 0.00001743 1 64 64 64 4096
+182	387775 23 256 256 0.00001743 0.00001743 1 64 64 64 4096
+185	387798 46 136 316 0.00000581 0.00001743 2 46 74 120 7592
+191	387844 48 137 317 0.00000581 0.00001743 2 368 592 960 485888
+193	387892 48 137 317 0.00000581 0.00001743 2 368 592 960 485888
+204	387940 44 137 317 0.00000581 0.00001743 2 0 0 0 0
+205	387984 44 137 317 0.00000581 0.00001743 2 0 0 0 0
+206	388028 44 137 317 0.00000581 0.00001743 2 0 0 0 0
+207	388072 48 137 317 0.00000581 0.00001743 2 368 592 960 485888
+209	388120 48 137 317 0.00000581 0.00001743 2 368 592 960 485888
+215	388168 46 137 317 0.00000581 0.00001743 2 -2 -1 -3 5
+216	388214 50 137 317 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+217	388264 44 137 317 0.00000581 0.00001743 2 0 0 0 0
+220	388308 48 137 317 0.00000581 0.00001743 2 368 592 960 485888
+226	388356 46 161 341 0.00001157 0.00002399 2 64 74 138 9572
+227	388402 23 257 257 0.00001743 0.00001743 1 64 64 64 4096
+228	388425 23 257 257 0.00001743 0.00001743 1 64 64 64 4096
+231	388448 46 137 317 0.00000581 0.00001743 2 46 74 120 7592
+237	388494 48 138 318 0.00000581 0.00001743 2 368 592 960 485888
+239	388542 48 138 318 0.00000581 0.00001743 2 368 592 960 485888
+250	388590 44 138 318 0.00000581 0.00001743 2 0 0 0 0
+251	388634 44 138 318 0.00000581 0.00001743 2 0 0 0 0
+252	388678 44 138 318 0.00000581 0.00001743 2 0 0 0 0
+253	388722 48 138 318 0.00000581 0.00001743 2 368 592 960 485888
+255	388770 48 138 318 0.00000581 0.00001743 2 368 592 960 485888
+261	388818 46 138 318 0.00000581 0.00001743 2 -2 -1 -3 5
+262	388864 50 138 318 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+263	388914 44 138 318 0.00000581 0.00001743 2 0 0 0 0
+266	388958 48 138 318 0.00000581 0.00001743 2 368 592 960 485888
+272	389006 46 162 342 0.00001157 0.00002399 2 64 74 138 9572
+273	389052 23 258 258 0.00001743 0.00001743 1 64 64 64 4096
+274	389075 23 258 258 0.00001743 0.00001743 1 64 64 64 4096
+277	389098 46 138 318 0.00000581 0.00001743 2 46 74 120 7592
+283	389144 48 139 319 0.00000581 0.00001743 2 368 592 960 485888
+285	389192 48 139 319 0.00000581 0.00001743 2 368 592 960 485888
+296	389240 44 139 319 0.00000581 0.00001743 2 0 0 0 0
+297	389284 44 139 319 0.00000581 0.00001743 2 0 0 0 0
+298	389328 44 139 319 0.00000581 0.00001743 2 0 0 0 0
+299	389372 48 139 319 0.00000581 0.00001743 2 368 592 960 485888
+301	389420 48 139 319 0.00000581 0.00001743 2 368 592 960 485888
+307	389468 46 139 319 0.00000581 0.00001743 2 -2 -1 -3 5
+308	389514 50 139 319 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+309	389564 44 139 319 0.00000581 0.00001743 2 0 0 0 0
+312	389608 48 139 319 0.00000581 0.00001743 2 368 592 960 485888
+318	389656 46 163 343 0.00001157 0.00002399 2 64 74 138 9572
+319	389702 23 259 259 0.00001743 0.00001743 1 64 64 64 4096
+320	389725 23 259 259 0.00001743 0.00001743 1 64 64 64 4096
+323	389748 46 139 319 0.00000581 0.00001743 2 46 74 120 7592
+329	389794 48 140 320 0.00000581 0.00001743 2 368 592 960 485888
+331	389842 48 140 320 0.00000581 0.00001743 2 368 592 960 485888
+342	389890 44 140 320 0.00000581 0.00001743 2 0 0 0 0
+343	389934 44 140 320 0.00000581 0.00001743 2 0 0 0 0
+344	389978 44 140 320 0.00000581 0.00001743 2 0 0 0 0
+345	390022 48 140 320 0.00000581 0.00001743 2 368 592 960 485888
+347	390070 48 140 320 0.00000581 0.00001743 2 368 592 960 485888
+353	390118 46 140 320 0.00000581 0.00001743 2 -2 -1 -3 5
+354	390164 50 140 320 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+355	390214 44 140 320 0.00000581 0.00001743 2 0 0 0 0
+358	390258 48 140 320 0.00000581 0.00001743 2 368 592 960 485888
+364	390306 46 164 344 0.00001157 0.00002399 2 64 74 138 9572
+365	390352 23 260 260 0.00001743 0.00001743 1 64 64 64 4096
+366	390375 23 260 260 0.00001743 0.00001743 1 64 64 64 4096
+369	390398 46 140 320 0.00000581 0.00001743 2 46 74 120 7592
+375	390444 48 141 321 0.00000581 0.00001743 2 368 592 960 485888
+377	390492 48 141 321 0.00000581 0.00001743 2 368 592 960 485888
+388	390540 44 141 321 0.00000581 0.00001743 2 0 0 0 0
+389	390584 44 141 321 0.00000581 0.00001743 2 0 0 0 0
+390	390628 44 141 321 0.00000581 0.00001743 2 0 0 0 0
+391	390672 48 141 321 0.00000581 0.00001743 2 368 592 960 485888
+393	390720 48 141 321 0.00000581 0.00001743 2 368 592 960 485888
+399	390768 46 141 321 0.00000581 0.00001743 2 -2 -1 -3 5
+400	390814 50 141 321 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+401	390864 44 141 321 0.00000581 0.00001743 2 0 0 0 0
+404	390908 48 141 321 0.00000581 0.00001743 2 368 592 960 485888
+410	390956 46 165 345 0.00001157 0.00002399 2 64 74 138 9572
+411	391002 23 261 261 0.00001743 0.00001743 1 64 64 64 4096
+412	391025 23 261 261 0.00001743 0.00001743 1 64 64 64 4096
+415	391048 46 141 321 0.00000581 0.00001743 2 46 74 120 7592
+421	391094 48 142 322 0.00000581 0.00001743 2 368 592 960 485888
+423	391142 48 142 322 0.00000581 0.00001743 2 368 592 960 485888
+434	391190 44 142 322 0.00000581 0.00001743 2 0 0 0 0
+435	391234 44 142 322 0.00000581 0.00001743 2 0 0 0 0
+436	391278 44 142 322 0.00000581 0.00001743 2 0 0 0 0
+437	391322 48 142 322 0.00000581 0.00001743 2 368 592 960 485888
+439	391370 48 142 322 0.00000581 0.00001743 2 368 592 960 485888
+445	391418 46 142 322 0.00000581 0.00001743 2 -2 -1 -3 5
+446	391464 50 142 322 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+447	391514 44 142 322 0.00000581 0.00001743 2 0 0 0 0
+450	391558 48 142 322 0.00000581 0.00001743 2 368 592 960 485888
+456	391606 46 166 346 0.00001157 0.00002399 2 64 74 138 9572
+457	391652 23 262 262 0.00001743 0.00001743 1 64 64 64 4096
+458	391675 23 262 262 0.00001743 0.00001743 1 64 64 64 4096
+461	391698 46 142 322 0.00000581 0.00001743 2 46 74 120 7592
+467	391744 48 143 323 0.00000581 0.00001743 2 368 592 960 485888
+469	391792 48 143 323 0.00000581 0.00001743 2 368 592 960 485888
+480	391840 44 143 323 0.00000581 0.00001743 2 0 0 0 0
+481	391884 44 143 323 0.00000581 0.00001743 2 0 0 0 0
+482	391928 44 143 323 0.00000581 0.00001743 2 0 0 0 0
+483	391972 48 143 323 0.00000581 0.00001743 2 368 592 960 485888
+485	392020 48 143 323 0.00000581 0.00001743 2 368 592 960 485888
+491	392068 46 143 323 0.00000581 0.00001743 2 -2 -1 -3 5
+492	392114 50 143 323 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+493	392164 44 143 323 0.00000581 0.00001743 2 0 0 0 0
+496	392208 48 143 323 0.00000581 0.00001743 2 368 592 960 485888
+502	392256 46 167 347 0.00001157 0.00002399 2 64 74 138 9572
+503	392302 23 263 263 0.00001743 0.00001743 1 64 64 64 4096
+504	392325 23 263 263 0.00001743 0.00001743 1 64 64 64 4096
+507	392348 46 143 323 0.00000581 0.00001743 2 46 74 120 7592
+513	392394 48 144 324 0.00000581 0.00001743 2 368 592 960 485888
+515	392442 48 144 324 0.00000581 0.00001743 2 368 592 960 485888
+526	392490 44 144 324 0.00000581 0.00001743 2 0 0 0 0
+527	392534 44 144 324 0.00000581 0.00001743 2 0 0 0 0
+528	392578 44 144 324 0.00000581 0.00001743 2 0 0 0 0
+529	392622 48 144 324 0.00000581 0.00001743 2 368 592 960 485888
+531	392670 48 144 324 0.00000581 0.00001743 2 368 592 960 485888
+537	392718 46 144 324 0.00000581 0.00001743 2 -2 -1 -3 5
+538	392764 50 144 324 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+539	392814 44 144 324 0.00000581 0.00001743 2 0 0 0 0
+542	392858 48 144 324 0.00000581 0.00001743 2 368 592 960 485888
+548	392906 46 168 348 0.00001157 0.00002399 2 64 74 138 9572
+549	392952 23 264 264 0.00001743 0.00001743 1 64 64 64 4096
+550	392975 23 264 264 0.00001743 0.00001743 1 64 64 64 4096
+553	392998 46 144 324 0.00000581 0.00001743 2 46 74 120 7592
+559	393044 48 145 325 0.00000581 0.00001743 2 368 592 960 485888
+561	393092 48 145 325 0.00000581 0.00001743 2 368 592 960 485888
+572	393140 44 145 325 0.00000581 0.00001743 2 0 0 0 0
+573	393184 44 145 325 0.00000581 0.00001743 2 0 0 0 0
+574	393228 44 145 325 0.00000581 0.00001743 2 0 0 0 0
+575	393272 48 145 325 0.00000581 0.00001743 2 368 592 960 485888
+577	393320 48 145 325 0.00000581 0.00001743 2 368 592 960 485888
+583	393368 46 145 325 0.00000581 0.00001743 2 -2 -1 -3 5
+584	393414 50 145 325 0.00000581 0.00001743 2 -960 -368 -1328 1057024
+585	393464 44 145 325 0.00000581 0.00001743 2 0 0 0 0
+588	393508 48 145 325 0.00000581 0.00001743 2 368 592 960 485888
+594	393556 46 169 349 0.00001157 0.00002399 2 64 74 138 9572
+595	393602 23 265 265 0.00001743 0.00001743 1 64 64 64 4096
+596	393625 23 265 265 0.00001743 0.00001743 1 64 64 64 4096
+599	393648 46 145 325 0.00000581 0.00001743 2 46 74 120 7592
+612	393694 276 110 121 0.00000581 0.00000581 12 28 28 336 9408
+655	393970 23 206 206 0.00001162 0.00001162 1 44 44 44 1936
+656	393993 46 182 362 0.00001162 0.00002404 2 46 56 102 5252
+662	394039 22 218 218 0.00001162 0.00001162 1 0 0 0 0
+663	394061 22 218 218 0.00001162 0.00001162 1 0 0 0 0
+664	394083 22 218 218 0.00001162 0.00001162 1 0 0 0 0
+665	394105 24 218 218 0.00001162 0.00001162 1 496 496 496 246016
+667	394129 24 218 218 0.00001162 0.00001162 1 496 496 496 246016
+673	394153 23 242 242 0.00001738 0.00001738 1 64 64 64 4096
+674	394176 46 170 350 0.00001162 0.00002404 2 64 74 138 9572
+675	394222 46 170 350 0.00001162 0.00002404 2 64 74 138 9572
+678	394268 23 218 218 0.00001162 0.00001162 1 62 62 62 3844
+697	394291 120 422 632 0.1 0.8 8 8 8 64 512
+707	394411 23 207 207 0.00001162 0.00001162 1 44 44 44 1936
+708	394434 46 183 363 0.00001162 0.00002404 2 46 56 102 5252
+714	394480 22 219 219 0.00001162 0.00001162 1 0 0 0 0
+715	394502 22 219 219 0.00001162 0.00001162 1 0 0 0 0
+716	394524 22 219 219 0.00001162 0.00001162 1 0 0 0 0
+717	394546 24 219 219 0.00001162 0.00001162 1 496 496 496 246016
+719	394570 24 219 219 0.00001162 0.00001162 1 496 496 496 246016
+725	394594 23 243 243 0.00001738 0.00001738 1 64 64 64 4096
+726	394617 46 171 351 0.00001162 0.00002404 2 64 74 138 9572
+727	394663 46 171 351 0.00001162 0.00002404 2 64 74 138 9572
+730	394709 23 219 219 0.00001162 0.00001162 1 62 62 62 3844
+749	394732 120 423 633 0.1 0.8 8 8 8 64 512
+759	394852 23 208 208 0.00001162 0.00001162 1 44 44 44 1936
+760	394875 46 184 364 0.00001162 0.00002404 2 46 56 102 5252
+766	394921 22 220 220 0.00001162 0.00001162 1 0 0 0 0
+767	394943 22 220 220 0.00001162 0.00001162 1 0 0 0 0
+768	394965 22 220 220 0.00001162 0.00001162 1 0 0 0 0
+769	394987 24 220 220 0.00001162 0.00001162 1 496 496 496 246016
+771	395011 24 220 220 0.00001162 0.00001162 1 496 496 496 246016
+777	395035 23 244 244 0.00001738 0.00001738 1 64 64 64 4096
+778	395058 46 172 352 0.00001162 0.00002404 2 64 74 138 9572
+779	395104 46 172 352 0.00001162 0.00002404 2 64 74 138 9572
+782	395150 23 220 220 0.00001162 0.00001162 1 62 62 62 3844
+801	395173 120 424 634 0.1 0.8 8 8 8 64 512
+811	395293 23 209 209 0.00001162 0.00001162 1 44 44 44 1936
+812	395316 46 185 365 0.00001162 0.00002404 2 46 56 102 5252
+818	395362 22 221 221 0.00001162 0.00001162 1 0 0 0 0
+819	395384 22 221 221 0.00001162 0.00001162 1 0 0 0 0
+820	395406 22 221 221 0.00001162 0.00001162 1 0 0 0 0
+821	395428 24 221 221 0.00001162 0.00001162 1 496 496 496 246016
+823	395452 24 221 221 0.00001162 0.00001162 1 496 496 496 246016
+829	395476 23 245 245 0.00001738 0.00001738 1 64 64 64 4096
+830	395499 46 173 353 0.00001162 0.00002404 2 64 74 138 9572
+831	395545 46 173 353 0.00001162 0.00002404 2 64 74 138 9572
+834	395591 23 221 221 0.00001162 0.00001162 1 62 62 62 3844
+853	395614 120 425 635 0.1 0.8 8 8 8 64 512
+863	395734 23 210 210 0.00001162 0.00001162 1 44 44 44 1936
+864	395757 46 186 366 0.00001162 0.00002404 2 46 56 102 5252
+870	395803 22 222 222 0.00001162 0.00001162 1 0 0 0 0
+871	395825 22 222 222 0.00001162 0.00001162 1 0 0 0 0
+872	395847 22 222 222 0.00001162 0.00001162 1 0 0 0 0
+873	395869 24 222 222 0.00001162 0.00001162 1 496 496 496 246016
+875	395893 24 222 222 0.00001162 0.00001162 1 496 496 496 246016
+881	395917 23 246 246 0.00001738 0.00001738 1 64 64 64 4096
+882	395940 46 174 354 0.00001162 0.00002404 2 64 74 138 9572
+883	395986 46 174 354 0.00001162 0.00002404 2 64 74 138 9572
+886	396032 23 222 222 0.00001162 0.00001162 1 62 62 62 3844
+905	396055 120 426 636 0.1 0.8 8 8 8 64 512
+915	396175 23 211 211 0.00001162 0.00001162 1 44 44 44 1936
+916	396198 46 187 367 0.00001162 0.00002404 2 46 56 102 5252
+922	396244 22 223 223 0.00001162 0.00001162 1 0 0 0 0
+923	396266 22 223 223 0.00001162 0.00001162 1 0 0 0 0
+924	396288 22 223 223 0.00001162 0.00001162 1 0 0 0 0
+925	396310 24 223 223 0.00001162 0.00001162 1 496 496 496 246016
+927	396334 24 223 223 0.00001162 0.00001162 1 496 496 496 246016
+933	396358 23 247 247 0.00001738 0.00001738 1 64 64 64 4096
+934	396381 46 175 355 0.00001162 0.00002404 2 64 74 138 9572
+935	396427 46 175 355 0.00001162 0.00002404 2 64 74 138 9572
+938	396473 23 223 223 0.00001162 0.00001162 1 62 62 62 3844
+957	396496 120 427 637 0.1 0.8 8 8 8 64 512
+967	396616 23 212 212 0.00001162 0.00001162 1 44 44 44 1936
+968	396639 46 188 368 0.00001162 0.00002404 2 46 56 102 5252
+974	396685 22 224 224 0.00001162 0.00001162 1 0 0 0 0
+975	396707 22 224 224 0.00001162 0.00001162 1 0 0 0 0
+976	396729 22 224 224 0.00001162 0.00001162 1 0 0 0 0
+977	396751 24 224 224 0.00001162 0.00001162 1 496 496 496 246016
+979	396775 24 224 224 0.00001162 0.00001162 1 496 496 496 246016
+985	396799 23 248 248 0.00001738 0.00001738 1 64 64 64 4096
+986	396822 46 176 356 0.00001162 0.00002404 2 64 74 138 9572
+987	396868 46 176 356 0.00001162 0.00002404 2 64 74 138 9572
+990	396914 23 224 224 0.00001162 0.00001162 1 62 62 62 3844
+1009	396937 128 428 638 0.1 0.8 8 8 8 64 512
+1019	397065 24 213 213 0.00001162 0.00001162 1 44 44 44 1936
+1020	397089 48 189 369 0.00001162 0.00002404 2 46 56 102 5252
+1026	397137 23 225 225 0.00001162 0.00001162 1 0 0 0 0
+1027	397160 23 225 225 0.00001162 0.00001162 1 0 0 0 0
+1028	397183 23 225 225 0.00001162 0.00001162 1 0 0 0 0
+1029	397206 25 225 225 0.00001162 0.00001162 1 496 496 496 246016
+1031	397231 25 225 225 0.00001162 0.00001162 1 496 496 496 246016
+1037	397256 24 249 249 0.00001738 0.00001738 1 64 64 64 4096
+1038	397280 48 177 357 0.00001162 0.00002404 2 64 74 138 9572
+1039	397328 48 177 357 0.00001162 0.00002404 2 64 74 138 9572
+1042	397376 24 225 225 0.00001162 0.00001162 1 62 62 62 3844
+1061	397400 128 429 639 0.1 0.8 8 8 8 64 512
+1071	397528 24 214 214 0.00001162 0.00001162 1 44 44 44 1936
+1072	397552 48 190 370 0.00001162 0.00002404 2 46 56 102 5252
+1078	397600 23 226 226 0.00001162 0.00001162 1 0 0 0 0
+1079	397623 23 226 226 0.00001162 0.00001162 1 0 0 0 0
+1080	397646 23 226 226 0.00001162 0.00001162 1 0 0 0 0
+1081	397669 25 226 226 0.00001162 0.00001162 1 496 496 496 246016
+1083	397694 25 226 226 0.00001162 0.00001162 1 496 496 496 246016
+1089	397719 24 250 250 0.00001738 0.00001738 1 64 64 64 4096
+1090	397743 48 178 358 0.00001162 0.00002404 2 64 74 138 9572
+1091	397791 48 178 358 0.00001162 0.00002404 2 64 74 138 9572
+1094	397839 24 226 226 0.00001162 0.00001162 1 62 62 62 3844
+1113	397863 128 430 640 0.1 0.8 8 8 8 64 512
+1123	397991 24 215 215 0.00001162 0.00001162 1 44 44 44 1936
+1124	398015 48 191 371 0.00001162 0.00002404 2 46 56 102 5252
+1130	398063 23 227 227 0.00001162 0.00001162 1 0 0 0 0
+1131	398086 23 227 227 0.00001162 0.00001162 1 0 0 0 0
+1132	398109 23 227 227 0.00001162 0.00001162 1 0 0 0 0
+1133	398132 25 227 227 0.00001162 0.00001162 1 496 496 496 246016
+1135	398157 25 227 227 0.00001162 0.00001162 1 496 496 496 246016
+1141	398182 24 251 251 0.00001738 0.00001738 1 64 64 64 4096
+1142	398206 48 179 359 0.00001162 0.00002404 2 64 74 138 9572
+1143	398254 48 179 359 0.00001162 0.00002404 2 64 74 138 9572
+1146	398302 24 227 227 0.00001162 0.00001162 1 62 62 62 3844
+1165	398326 128 431 641 0.1 0.8 8 8 8 64 512
+1175	398454 24 216 216 0.00001162 0.00001162 1 44 44 44 1936
+1176	398478 48 192 372 0.00001162 0.00002404 2 46 56 102 5252
+1182	398526 23 228 228 0.00001162 0.00001162 1 0 0 0 0
+1183	398549 23 228 228 0.00001162 0.00001162 1 0 0 0 0
+1184	398572 23 228 228 0.00001162 0.00001162 1 0 0 0 0
+1185	398595 25 228 228 0.00001162 0.00001162 1 496 496 496 246016
+1187	398620 25 228 228 0.00001162 0.00001162 1 496 496 496 246016
+1193	398645 24 252 252 0.00001738 0.00001738 1 64 64 64 4096
+1194	398669 48 180 360 0.00001162 0.00002404 2 64 74 138 9572
+1195	398717 48 180 360 0.00001162 0.00002404 2 64 74 138 9572
+1198	398765 24 228 228 0.00001162 0.00001162 1 62 62 62 3844
+1227	398789 24 217 217 0.00001162 0.00001162 1 44 44 44 1936
+1228	398813 48 193 373 0.00001162 0.00002404 2 46 56 102 5252
+1234	398861 23 229 229 0.00001162 0.00001162 1 0 0 0 0
+1235	398884 23 229 229 0.00001162 0.00001162 1 0 0 0 0
+1236	398907 23 229 229 0.00001162 0.00001162 1 0 0 0 0
+1237	398930 25 229 229 0.00001162 0.00001162 1 496 496 496 246016
+1239	398955 25 229 229 0.00001162 0.00001162 1 496 496 496 246016
+1245	398980 24 253 253 0.00001738 0.00001738 1 64 64 64 4096
+1246	399004 48 181 361 0.00001162 0.00002404 2 64 74 138 9572
+1247	399052 48 181 361 0.00001162 0.00002404 2 64 74 138 9572
+1250	399100 24 229 229 0.00001162 0.00001162 1 62 62 62 3844
+

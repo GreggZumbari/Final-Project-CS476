@@ -17,10 +17,30 @@
 
 import inet.node.inet.StandardHost;
 import inet.node.inet.Router;
+import inet.queueing.filter.UredDropper;
+import inet.queueing.queue.CompoundPacketQueueBase;
+import inet.queueing.queue.PacketQueue;
 import inet.visualizer.common.IntegratedVisualizer;
 import inet.node.ethernet.Eth10M;
 import inet.node.ethernet.Eth100M;
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
+
+//module UREDQueue extends CompoundPacketQueueBase
+//{
+//    submodules:
+//        ured: UredDropper {
+//            wq = default(0.002);
+//            minth = default(30);
+//            maxth = default(90);
+//            maxp = default(0.10);
+//            pkrate = default(8333.333);
+//        }
+//        fifo: PacketQueue;
+//    connections:
+//        in --> ured.in;
+//        ured.out --> fifo.in;
+//        fifo.out --> out;
+//}
 
 network DDoSNetwork
 {
