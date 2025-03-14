@@ -12,60 +12,54 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
-import inet.node.inet.StandardHost;
-import inet.applications.tcpapp.TcpServerApp;
+//import inet.node.inet.StandardHost;
+//import inet.applications.tcpapp.TcpServerApp;
 
+import inet.node.inet.StandardHost;
+import inet.node.inet.Router;
+import inet.visualizer.common.IntegratedVisualizer;
+import inet.node.ethernet.Eth10M;
+import inet.node.ethernet.Eth100M;
+import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 
 network DDoSNetwork
 {
     parameters:
-        int baseX = 100;  // Define base X position
-        int spacingA = 30;  // Define spacing between nodes
-        int spacingB = 70;
-    //int xpos;
-    types:
-        channel Channel extends ned.DatarateChannel
-        {
-            delay = 100ms;
-            datarate = 100Mbps;  // Define data rate for Ethernet
-            ber = 0;             // Bit error rate (optional)
-            per = 0;             // Packet error rate (optional)
-        }
-
+        int numAttackers = default(10);				// Number of Attackers in the network (you can change this)
+        int numLegitimateClients = default(2);		// Number of Legitimate Clients in the network (you can change this)
+        
     submodules:
-
+        // Using just one router & server to connect everyone
+        router: Router {
+            @display("p=350,200");
+        }
         server: StandardHost {
-
-            @display("p=282,109");
-
+            @display("p=500,200");
         }
-
-        attacker[10]: StandardHost {   // 10 attacker nodes
-
-            //@display("p=" + string(baseX + index * spacingA) + ",100"); // Positioning
-            @display("i=device/pc;p=169,30");
-
-
+        // Initialize the attackers
+        attacker[numAttackers]: StandardHost {
+            @display("p=200,150,row,100");
         }
-
-        legitimateClient[3]: StandardHost {  // 3 legitimate clients
-
-            //@display("p=" + string(baseX + index * spacingB) + ",300"); // Positioning
-            @display("i=device/pc");
-
-
+        // Initialize the legit clients
+        legitimateClient[numLegitimateClients]: StandardHost {
+            @display("p=200,300,row,100");
+            //@statistic[droppedPackets](title="Dropped Packets"; record=count,vector);
         }
-
-    connections allowunconnected:
-
-        for i=0..9 {
-            attacker[i].ethg++ <--> Channel <--> server.ethg++;
-
+        // This thing automatically creates routes between the hosts, router(s), and server(s)
+		configurator: Ipv4NetworkConfigurator {
+            @display("p=88,37");
         }
-
-        for i=0..2 {
-            legitimateClient[i].ethg++ <--> Channel <--> server.ethg++;
-
+        // This thing is supposed to visualize the data collected from the simulation
+        visualizer: IntegratedVisualizer {
+            @display("p=267,37");
         }
-
+    connections:
+        // See "Design" tab for a more readable version of this
+        router.ethg++ <--> Eth100M <--> server.ethg++;
+        for i=0..numAttackers-1 {
+            attacker[i].ethg++ <--> Eth100M <--> router.ethg++;
+        }
+        for i=0..numLegitimateClients-1 {
+            legitimateClient[i].ethg++ <--> Eth100M <--> router.ethg++;
+        }
 }
